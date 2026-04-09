@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const INVESTOR_PASSWORD = 'niyama2026'
+const INVESTOR_PASSWORD = 'NiyamaLife2026'
 
 export default function Investor() {
     const [password, setPassword] = useState('')

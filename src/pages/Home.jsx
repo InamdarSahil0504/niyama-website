@@ -1,3 +1,4 @@
+import SEO from '../components/SEO'
 import HowItWorks from '../components/HowItWorks'
 import Habits from '../components/Habits'
 import PointsRewards from '../components/PointsRewards'
@@ -10,7 +11,6 @@ import Testimonials from '../components/Testimonials'
 import FAQ from '../components/FAQ'
 import CTA from '../components/CTA'
 import Waitlist from '../components/Waitlist'
-import SEO from '../components/SEO'
 
 export default function Home() {
     return (
@@ -94,7 +94,7 @@ export default function Home() {
             <WhyNiyama />
             <Founder />
             <BetaTransparency />
-            <Testimonials />
+            {/* <Testimonials /> */}
             <FAQ />
             <CTA />
             <Waitlist />
