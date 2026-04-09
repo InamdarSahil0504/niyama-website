@@ -1,3 +1,4 @@
+import ComingSoonLanding from './pages/ComingSoonLanding'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { RegionProvider, useRegion } from './context/RegionContext'
 import RegionSelector from './components/RegionSelector'
@@ -16,9 +17,12 @@ import Investor from './pages/Investor'
 import NotFound from './pages/NotFound'
 import CookieConsent from './components/CookieConsent'
 
+const COMING_SOON = true
 function AppContent() {
   const { region, loading } = useRegion()
-
+  if (COMING_SOON) {
+    return <ComingSoonLanding />
+  }
   if (loading) {
     return (
       <div style={{ position: 'fixed', inset: 0, backgroundColor: '#F4F7F5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
