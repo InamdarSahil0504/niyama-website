@@ -17,7 +17,7 @@ import Investor from './pages/Investor'
 import NotFound from './pages/NotFound'
 import CookieConsent from './components/CookieConsent'
 
-const COMING_SOON = false
+const COMING_SOON = true
 function AppContent() {
   const { region, loading } = useRegion()
   if (COMING_SOON) {
