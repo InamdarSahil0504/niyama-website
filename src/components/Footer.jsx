@@ -7,7 +7,7 @@ export default function Footer() {
         <footer style={{ backgroundColor: '#1a2e28', color: 'white', padding: '80px 24px 40px' }}>
             <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '48px', marginBottom: '64px' }}>
-                    <div style={{ gridColumn: 'span 2' }}>
+                    <div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                             <span style={{ fontSize: '24px' }}>🌿</span>
                             <span style={{ fontWeight: '700', fontSize: '20px', color: 'white' }}>Niyama Life</span>
