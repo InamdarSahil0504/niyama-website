@@ -6,7 +6,7 @@ export default function Footer() {
     return (
         <footer style={{ backgroundColor: '#1a2e28', color: 'white', padding: '80px 24px 40px' }}>
             <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '48px', marginBottom: '64px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '48px', marginBottom: '64px' }}>
                     <div style={{ gridColumn: 'span 2' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                             <span style={{ fontSize: '24px' }}>🌿</span>
@@ -18,11 +18,7 @@ export default function Footer() {
                         <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', maxWidth: '320px', lineHeight: '1.7', marginBottom: '24px' }}>
                             Building the world's first behaviour change platform that makes daily discipline financially meaningful — one habit at a time.
                         </p>
-                        <div style={{ display: 'flex', gap: '12px' }}>
-                            <a href="https://instagram.com/niyamalife" target="_blank" rel="noopener noreferrer" style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', fontSize: '14px' }}>📸</a>
-                            <a href="https://twitter.com/niyamalife" target="_blank" rel="noopener noreferrer" style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', fontSize: '14px' }}>🐦</a>
-                            <a href="https://linkedin.com/company/niyamalife" target="_blank" rel="noopener noreferrer" style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', fontSize: '14px' }}>💼</a>
-                        </div>
+                        <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', fontStyle: 'italic' }}>Social media coming soon 🌿</p>
                     </div>
 
                     <div>
