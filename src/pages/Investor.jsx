@@ -33,12 +33,12 @@ export default function Investor() {
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
                                 placeholder="Enter access code"
-                                style={{ padding: '14px 20px', borderRadius: '12px', border: error ? '1px solid #D4735F' : '1px solid #d8e8e2', fontSize: '15px', color: '#1a2e28', backgroundColor: 'white', outline: 'none', textAlign: 'center', letterSpacing: '0.1em' }}
+                                style={{ padding: '14px 20px', borderRadius: '12px', border: error ? '1px solid #C96A52' : '1px solid #d8e8e2', fontSize: '15px', color: '#1a2e28', backgroundColor: 'white', outline: 'none', textAlign: 'center', letterSpacing: '0.1em' }}
                             />
                             {error && (
-                                <p style={{ fontSize: '13px', color: '#D4735F', margin: 0 }}>Incorrect access code. Please try again or contact info@niyamalife.com</p>
+                                <p style={{ fontSize: '13px', color: '#C96A52', margin: 0 }}>Incorrect access code. Please try again or contact info@niyamalife.com</p>
                             )}
-                            <button type="submit" style={{ backgroundColor: '#5A8A78', color: 'white', fontWeight: '700', fontSize: '15px', padding: '14px 32px', borderRadius: '25px', border: 'none', cursor: 'pointer' }}>
+                            <button type="submit" style={{ backgroundColor: '#4A7A68', color: 'white', fontWeight: '700', fontSize: '15px', padding: '14px 32px', borderRadius: '25px', border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}>
                                 Access Investor Page
                             </button>
                         </form>
@@ -74,7 +74,7 @@ export default function Investor() {
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The one-line pitch</h2>
                         <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2' }}>
                             <p style={{ fontSize: '20px', fontWeight: '600', color: '#1a2e28', lineHeight: '1.6', margin: 0 }}>
-                                Niyama Life is a subscription behaviour change platform that rewards users financially for completing science-backed daily habits — making daily discipline the most financially rational choice.
+                                Niyama Life is a subscription behaviour change platform that rewards users financially for completing 9 science-backed daily habits — making daily discipline the most financially rational choice.
                             </p>
                         </div>
                     </div>
@@ -90,7 +90,7 @@ export default function Investor() {
                             ].map(function (point, i) {
                                 return (
                                     <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', backgroundColor: '#F4F7F5', borderRadius: '12px', padding: '20px 24px' }}>
-                                        <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#D4735F', flexShrink: 0, marginTop: '6px' }}></div>
+                                        <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#C96A52', flexShrink: 0, marginTop: '6px' }}></div>
                                         <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.7', margin: 0 }}>{point}</p>
                                     </div>
                                 )
@@ -102,14 +102,14 @@ export default function Investor() {
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The solution</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                             {[
-                                '5 science-backed daily habits — each chosen for overwhelming research evidence, not trend.',
-                                'A points system that converts daily discipline into real financial rewards.',
-                                'A subscription model — users pay a small monthly fee and get rewarded when they succeed. No financial risk for the user.',
-                                'Behavioural economics as the core mechanism — the same reinforcement principles used in clinical behaviour change research.',
+                                '9 daily habits across 3 tiers — 3 fixed core habits with overwhelming research evidence, 4 personalised library choices from 10 science-backed options, and up to 3 custom habits for Premium subscribers.',
+                                'A progressive milestone reward system — rewards grow as consistency grows. Hit 10 days, 20 days, a successful month, a perfect month. Premium subscribers unlock up to $45 per month.',
+                                'A subscription model — users pay a small monthly fee and get rewarded when they succeed. The financial incentive is real, not gamified.',
+                                'Behavioural economics as the core mechanism — the same reinforcement principles used in clinical behaviour change research, applied to preventive health.',
                             ].map(function (point, i) {
                                 return (
-                                    <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', backgroundColor: '#e8f2ee', borderRadius: '12px', padding: '20px 24px' }}>
-                                        <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#5A8A78', flexShrink: 0, marginTop: '6px' }}></div>
+                                    <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', backgroundColor: '#e8f5f0', borderRadius: '12px', padding: '20px 24px' }}>
+                                        <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#4A7A68', flexShrink: 0, marginTop: '6px' }}></div>
                                         <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.7', margin: 0 }}>{point}</p>
                                     </div>
                                 )
@@ -124,7 +124,7 @@ export default function Investor() {
                                 { title: 'Post-pandemic health awareness', description: 'Consumer health consciousness is at an all-time high.' },
                                 { title: 'Wearables mainstream', description: 'Health tracking is already a daily habit for millions.' },
                                 { title: 'Health and fintech converging', description: 'Financial wellness and physical wellness are merging markets.' },
-                                { title: 'Behaviour change is scientifically proven', description: 'The research on financial incentives and habit formation is robust and replicated.' },
+                                { title: 'Behaviour change is proven', description: 'The research on financial incentives and habit formation is robust and replicated.' },
                             ].map(function (item) {
                                 return (
                                     <div key={item.title} style={{ backgroundColor: '#F4F7F5', borderRadius: '12px', padding: '24px', border: '1px solid #d8e8e2' }}>
@@ -138,16 +138,16 @@ export default function Investor() {
 
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Market size</h2>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '24px' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
                             {[
                                 { stat: '$5.6T', label: 'Global wellness market', source: 'Global Wellness Institute, 2022' },
                                 { stat: '$87B', label: 'Digital health market by 2027', source: 'Grand View Research, 2023' },
                                 { stat: '$50B+', label: 'Behavioural health market', source: 'Market Research Future, 2023' },
-                                { stat: '1.4B', label: 'Target demographic — 18-35 globally', source: 'UN Population Data' },
+                                { stat: '1.4B', label: 'Target demographic — 18–35 globally', source: 'UN Population Data' },
                             ].map(function (item) {
                                 return (
                                     <div key={item.stat} style={{ backgroundColor: '#F4F7F5', borderRadius: '12px', padding: '24px', textAlign: 'center', border: '1px solid #d8e8e2' }}>
-                                        <div style={{ fontSize: '32px', fontWeight: '700', color: '#5A8A78', marginBottom: '4px' }}>{item.stat}</div>
+                                        <div style={{ fontSize: '32px', fontWeight: '700', color: '#4A7A68', marginBottom: '4px' }}>{item.stat}</div>
                                         <div style={{ fontSize: '13px', color: '#1a2e28', fontWeight: '600', marginBottom: '4px' }}>{item.label}</div>
                                         <div style={{ fontSize: '11px', color: '#7a9990', fontStyle: 'italic' }}>{item.source}</div>
                                     </div>
@@ -160,11 +160,31 @@ export default function Investor() {
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Business model</h2>
                         <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2', marginBottom: '24px' }}>
                             <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', marginBottom: '16px' }}>
-                                Revenue is generated through monthly subscriptions across four tiers — Free ($0), Basic ($0.99/mo), Plus ($4.99/mo), and Premium ($14.99/mo). The model works because average reward payouts are significantly below the tier cap — most users will not achieve maximum rewards every month.
+                                Revenue is generated through monthly and annual subscriptions across four tiers — Free ($0), Basic ($0.99/mo or $9.99/yr), Plus ($4.99/mo or $49.99/yr), and Premium ($14.99/mo or $149.99/yr). The model works because average reward payouts are significantly below the tier cap — most users will not achieve maximum milestone rewards every month.
+                            </p>
+                            <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', marginBottom: '16px' }}>
+                                Rewards are progressive — base cap plus milestone bonuses that unlock only when users hit 10-day, 20-day, successful month, and perfect month thresholds. This means reward costs scale with the most engaged users, who also have the highest retention and LTV.
                             </p>
                             <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', margin: 0 }}>
-                                India pricing is structured separately in INR via Razorpay and a local subsidiary, planned post-seed.
+                                India pricing is structured separately in INR via Razorpay and a local entity, planned post-seed.
                             </p>
+                        </div>
+
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+                            {[
+                                { tier: 'Basic', price: '$0.99/mo', maxReward: '$5.00/mo', margin: '~$0.99 base' },
+                                { tier: 'Plus', price: '$4.99/mo', maxReward: '$17.50/mo', margin: 'Milestone-gated' },
+                                { tier: 'Premium', price: '$14.99/mo', maxReward: '$45.00/mo', margin: 'Milestone-gated' },
+                            ].map(function (t) {
+                                return (
+                                    <div key={t.tier} style={{ backgroundColor: 'white', borderRadius: '12px', padding: '20px', border: '1px solid #d8e8e2' }}>
+                                        <div style={{ fontSize: '14px', fontWeight: '700', color: '#1a2e28', marginBottom: '8px' }}>{t.tier}</div>
+                                        <div style={{ fontSize: '13px', color: '#4a6b62', marginBottom: '4px' }}>Price: <strong>{t.price}</strong></div>
+                                        <div style={{ fontSize: '13px', color: '#4a6b62', marginBottom: '4px' }}>Max reward: <strong>{t.maxReward}</strong></div>
+                                        <div style={{ fontSize: '11px', color: '#7a9990' }}>{t.margin}</div>
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
 
@@ -172,15 +192,34 @@ export default function Investor() {
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Traction</h2>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '16px' }}>
                             {[
-                                { stat: 'Beta 1', label: 'Fully functional product live' },
-                                { stat: 'PWA', label: 'Live at niyamalife.com' },
-                                { stat: 'Beta 2', label: 'Apple Health integration planned' },
-                                { stat: 'Pre-revenue', label: 'Beta — no fees charged yet' },
+                                { stat: 'Beta 1', label: 'Fully functional product — live' },
+                                { stat: 'Beta 2', label: 'Web app complete — 9-habit framework' },
+                                { stat: 'PWA', label: 'Live at app.niyamalife.com' },
+                                { stat: 'Pre-revenue', label: 'Stripe activates at Beta 2 launch' },
                             ].map(function (item) {
                                 return (
-                                    <div key={item.stat} style={{ backgroundColor: '#e8f2ee', borderRadius: '12px', padding: '24px', textAlign: 'center' }}>
-                                        <div style={{ fontSize: '18px', fontWeight: '700', color: '#5A8A78', marginBottom: '4px' }}>{item.stat}</div>
+                                    <div key={item.stat} style={{ backgroundColor: '#e8f5f0', borderRadius: '12px', padding: '24px', textAlign: 'center' }}>
+                                        <div style={{ fontSize: '16px', fontWeight: '700', color: '#4A7A68', marginBottom: '4px' }}>{item.stat}</div>
                                         <div style={{ fontSize: '12px', color: '#4a6b62' }}>{item.label}</div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+
+                    <div style={{ marginBottom: '80px' }}>
+                        <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Roadmap</h2>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                            {[
+                                { label: 'Phase 5 — Now', description: 'Website updated for Beta 2 launch. Stripe subscriptions and real rewards go live simultaneously with the Beta 2 web app.' },
+                                { label: 'Phase 6 — Next', description: 'React Native app for iOS and Android via Expo. Apple HealthKit and Google Health Connect integration. Push notifications, sleep mode, and in-app AI coaching.' },
+                                { label: 'Phase 7 — Post-seed', description: 'India market launch — Razorpay payments, INR rewards, DPDPA compliance, local entity. Referral and social sharing growth loops.' },
+                                { label: 'YC Winter 2027', description: 'Target application cycle. Building toward the metrics and story that make Niyama Life a compelling YC application.' },
+                            ].map(function (item) {
+                                return (
+                                    <div key={item.label} style={{ backgroundColor: '#F4F7F5', borderRadius: '12px', padding: '24px', border: '1px solid #d8e8e2', display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+                                        <div style={{ fontSize: '12px', fontWeight: '700', color: '#4A7A68', textTransform: 'uppercase', letterSpacing: '0.05em', minWidth: '100px', paddingTop: '2px', flexShrink: 0 }}>{item.label}</div>
+                                        <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.7', margin: 0 }}>{item.description}</p>
                                     </div>
                                 )
                             })}
@@ -191,49 +230,31 @@ export default function Investor() {
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The founder</h2>
                         <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-                                <div style={{ width: '64px', height: '64px', borderRadius: '50%', backgroundColor: '#5A8A78', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', fontWeight: '700', color: 'white', flexShrink: 0 }}>S</div>
+                                <div style={{ width: '64px', height: '64px', borderRadius: '50%', backgroundColor: '#4A7A68', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', fontWeight: '700', color: 'white', flexShrink: 0 }}>S</div>
                                 <div>
                                     <div style={{ fontSize: '18px', fontWeight: '700', color: '#1a2e28' }}>Sahil Inamdar</div>
                                     <div style={{ fontSize: '13px', color: '#7a9990' }}>Founder & CEO · Niyama Life</div>
                                 </div>
                             </div>
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '12px', marginBottom: '20px' }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px', marginBottom: '20px' }}>
                                 {[
                                     { stat: 'PhD', label: 'Chemical Engineering, ASU' },
                                     { stat: '700+', label: 'Research citations' },
                                     { stat: '20+', label: 'Peer-reviewed publications' },
-                                    { stat: '5+ yrs', label: 'Biotech research' },
+                                    { stat: 'H-index 15', label: 'Research impact' },
                                 ].map(function (cred) {
                                     return (
                                         <div key={cred.stat} style={{ backgroundColor: 'white', borderRadius: '10px', padding: '16px', textAlign: 'center', border: '1px solid #d8e8e2' }}>
-                                            <div style={{ fontSize: '20px', fontWeight: '700', color: '#5A8A78', marginBottom: '2px' }}>{cred.stat}</div>
+                                            <div style={{ fontSize: '18px', fontWeight: '700', color: '#4A7A68', marginBottom: '2px' }}>{cred.stat}</div>
                                             <div style={{ fontSize: '11px', color: '#4a6b62' }}>{cred.label}</div>
                                         </div>
                                     )
                                 })}
                             </div>
                             <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', marginBottom: '16px' }}>
-                                Sahil spent five years working on cancer immunotherapy and neurodegenerative diseases including Alzheimer's and Parkinson's. He built Niyama Life from a personal conviction that the diseases he spent his career trying to cure are largely preventable — and that the gap between knowing and doing is a behavioural economics problem, not an information problem.
+                                Sahil spent years working on cancer immunotherapy and neurodegenerative diseases including Alzheimer's and Parkinson's. He built Niyama Life from a personal conviction that the diseases he spent his career trying to cure are largely preventable — and that the gap between knowing and doing is a behavioural economics problem, not an information problem.
                             </p>
-                            <a href="https://www.linkedin.com/in/sahil-inamdar" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#5A8A78', fontWeight: '600', textDecoration: 'none' }}>LinkedIn Profile →</a>
-                        </div>
-                    </div>
-
-                    <div style={{ marginBottom: '80px' }}>
-                        <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Vision</h2>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                            {[
-                                { label: 'Near term', description: 'Grow to 1,000 active users across USA and India. Launch Apple Health integration for verified habit tracking.' },
-                                { label: 'Medium term', description: 'Native iOS and Android apps. Razorpay integration for India. Build proprietary wearable verification layer.' },
-                                { label: 'Long term', description: 'The world\'s leading behaviour change platform — where daily discipline is universally rewarded, financially and physically.' },
-                            ].map(function (item) {
-                                return (
-                                    <div key={item.label} style={{ backgroundColor: '#F4F7F5', borderRadius: '12px', padding: '24px', border: '1px solid #d8e8e2', display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                                        <div style={{ fontSize: '12px', fontWeight: '700', color: '#5A8A78', textTransform: 'uppercase', letterSpacing: '0.05em', minWidth: '80px', paddingTop: '2px' }}>{item.label}</div>
-                                        <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.7', margin: 0 }}>{item.description}</p>
-                                    </div>
-                                )
-                            })}
+                            <a href="https://www.linkedin.com/in/sahil-inamdar" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#4A7A68', fontWeight: '600', textDecoration: 'none' }}>LinkedIn Profile →</a>
                         </div>
                     </div>
 
@@ -242,8 +263,8 @@ export default function Investor() {
                         <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', marginBottom: '24px', lineHeight: '1.7' }}>
                             To discuss investment opportunities or request further information contact Sahil directly.
                         </p>
-                        <a href="mailto:info@niyamalife.com" style={{ display: 'inline-block', backgroundColor: '#D4735F', color: 'white', fontWeight: '700', fontSize: '16px', padding: '14px 36px', borderRadius: '30px', textDecoration: 'none', marginBottom: '16px' }}>
-                            info@niyamalife.com
+                        <a href="mailto:sahil.inamdar@gmail.com" style={{ display: 'inline-block', backgroundColor: '#C96A52', color: 'white', fontWeight: '700', fontSize: '16px', padding: '14px 36px', borderRadius: '30px', textDecoration: 'none', marginBottom: '16px' }}>
+                            sahil.inamdar@gmail.com
                         </a>
                         <br />
                         <a href="https://www.linkedin.com/in/sahil-inamdar" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>

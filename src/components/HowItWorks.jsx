@@ -1,8 +1,29 @@
 export default function HowItWorks() {
     const steps = [
-        { number: '01', title: 'Science selects the habits', description: 'Five daily habits chosen because the evidence is overwhelming — not because they are trendy. Each one is backed by decades of peer-reviewed research.', color: '#5A8A78' },
-        { number: '02', title: 'You show up daily', description: 'Track your habits every day. Complete any 4 of 5 for a successful day. The app is built for real life — not perfection.', color: '#5A8A78' },
-        { number: '03', title: 'Real rewards follow', description: 'Your points convert to real financial rewards every month. Redeemable at hundreds of brands via Tremendous. No gimmicks — just real money.', color: '#D4735F' },
+        {
+            number: '01',
+            title: 'Science builds your habit framework',
+            description: 'Three core habits form your daily foundation — chosen because the evidence is overwhelming, not because they are trendy. Then you personalise: pick four more from a library of ten science-backed options. Plus and Premium subscribers can add their own custom habits on top.',
+            color: '#4A7A68',
+        },
+        {
+            number: '02',
+            title: 'You show up daily',
+            description: 'Track your habits every day. A successful day means completing at least 5 of your 9 habits — with at least 2 being core habits. The app is built for real life, not perfection. Miss a day? Plus and Premium subscribers get one streak freeze per month.',
+            color: '#4A7A68',
+        },
+        {
+            number: '03',
+            title: 'Milestones unlock as you build momentum',
+            description: 'Rewards do not just sit at a flat cap — they grow with your consistency. Hit 10 days, 20 days, complete a successful month, then a perfect month. Each milestone unlocks an additional reward bonus on top of your base cap.',
+            color: '#C9973A',
+        },
+        {
+            number: '04',
+            title: 'Real rewards follow',
+            description: 'Your rewards convert to real gift cards every month via Tremendous — redeemable at hundreds of brands. Premium subscribers can unlock up to $45 per month. No gimmicks. No points that expire. Real financial rewards for real discipline.',
+            color: '#C96A52',
+        },
     ]
 
     return (
@@ -13,23 +34,24 @@ export default function HowItWorks() {
                         How Niyama Life works
                     </h2>
                     <p style={{ fontSize: '18px', color: '#4a6b62', maxWidth: '520px', margin: '0 auto' }}>
-                        Three steps. No complexity. Just daily discipline — rewarded.
+                        Four steps. No complexity. Just daily discipline — rewarded.
                     </p>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
                     {steps.map(function (step) {
                         return (
-                            <div key={step.number} style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '40px 32px', position: 'relative' }}>
-                                <div style={{ fontSize: '48px', fontWeight: '700', color: step.color, opacity: 0.2, marginBottom: '16px', lineHeight: 1 }}>
+                            <div key={step.number} style={{ backgroundColor: '#F4F7F5', borderRadius: '20px', padding: '40px 32px', position: 'relative' }}>
+                                <div style={{ fontSize: '52px', fontWeight: '700', color: step.color, opacity: 0.15, marginBottom: '16px', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>
                                     {step.number}
                                 </div>
-                                <h3 style={{ fontSize: '20px', fontWeight: '700', color: '#1a2e28', marginBottom: '12px' }}>
+                                <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#1a2e28', marginBottom: '12px', lineHeight: '1.3' }}>
                                     {step.title}
                                 </h3>
-                                <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.7' }}>
+                                <p style={{ fontSize: '14px', color: '#4a6b62', lineHeight: '1.75' }}>
                                     {step.description}
                                 </p>
-                                <div style={{ width: '40px', height: '3px', backgroundColor: step.color, borderRadius: '2px', marginTop: '24px' }}></div>
+                                <div style={{ width: '40px', height: '3px', backgroundColor: step.color, borderRadius: '2px', marginTop: '28px' }}></div>
                             </div>
                         )
                     })}

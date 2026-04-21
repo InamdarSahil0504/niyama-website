@@ -53,6 +53,8 @@ export default function Science() {
                 }
             `}</style>
             <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+
+                {/* Header */}
                 <div style={{ textAlign: 'center', marginBottom: '64px' }}>
                     <div style={{ display: 'inline-block', backgroundColor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.7)', fontSize: '13px', fontWeight: '600', padding: '6px 16px', borderRadius: '20px', marginBottom: '20px' }}>
                         The science behind Niyama
@@ -64,6 +66,8 @@ export default function Science() {
                         Every habit in the Niyama framework is backed by decades of peer-reviewed research. The evidence is not emerging or contested — it is overwhelming.
                     </p>
                 </div>
+
+                {/* Stat cards */}
                 <div className="science-grid">
                     {facts.map(function (fact) {
                         return (
@@ -79,6 +83,8 @@ export default function Science() {
                         )
                     })}
                 </div>
+
+                {/* Steps tiers callout */}
                 <div style={{ backgroundColor: 'rgba(255,255,255,0.06)', borderRadius: '16px', padding: '32px 40px', marginBottom: '24px', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexWrap: 'wrap', gap: '32px', alignItems: 'center' }}>
                     <div style={{ flex: 1, minWidth: '220px' }}>
                         <div style={{ fontSize: '13px', fontWeight: '600', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Daily steps — tiered scoring</div>
@@ -101,6 +107,8 @@ export default function Science() {
                         })}
                     </div>
                 </div>
+
+                {/* Founder quote */}
                 <div style={{ backgroundColor: 'rgba(255,255,255,0.06)', borderRadius: '16px', padding: '48px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)' }}>
                     <p style={{ fontSize: '21px', fontWeight: '600', color: 'white', lineHeight: '1.65', maxWidth: '700px', margin: '0 auto 28px', fontStyle: 'italic' }}>
                         "I spent years in the lab watching disease erase people. Most of it was preventable. The 9 habits in Niyama are what the science says could have changed that."
@@ -113,6 +121,7 @@ export default function Science() {
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
     )

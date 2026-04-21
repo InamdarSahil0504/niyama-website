@@ -47,7 +47,7 @@ export default function Home() {
                         marginBottom: '24px',
                         letterSpacing: '-1px',
                     }}>
-                        Daily discipline. Backed by science. <span style={{ color: '#D4735F' }}>Rewarded</span> financially.
+                        Daily discipline. Backed by science. <span style={{ color: '#C96A52' }}>Rewarded</span> financially.
                     </h1>
 
                     <p style={{
@@ -58,9 +58,7 @@ export default function Home() {
                         maxWidth: '520px',
                         margin: '0 auto 40px',
                     }}>
-                        Complete 5 science-backed habits every day.
-                        Earn points. Get real rewards.
-                        Start completely free — no credit card required.
+                        Build 9 science-backed habits every day. Get real financial rewards for staying consistent. Premium subscribers unlock up to $45 per month. Start completely free — no credit card required.
                     </p>
 
                     <div style={{
@@ -70,22 +68,19 @@ export default function Home() {
                         flexWrap: 'wrap',
                         marginBottom: '48px',
                     }}>
-                        <a href="https://niyama-rouge.vercel.app" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#D4735F', color: 'white', fontWeight: '600', fontSize: '16px', padding: '14px 32px', borderRadius: '30px', textDecoration: 'none' }}>
+                        <a href="https://app.niyamalife.com" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#C96A52', color: 'white', fontWeight: '600', fontSize: '16px', padding: '14px 32px', borderRadius: '30px', textDecoration: 'none' }}>
                             Start Free
                         </a>
-
-                        <a href="#how-it-works" style={{ backgroundColor: 'transparent', color: '#5A8A78', fontWeight: '600', fontSize: '16px', padding: '14px 32px', borderRadius: '30px', textDecoration: 'none', border: '2px solid #5A8A78' }}>                            See How It Works
+                        <a href="#how-it-works" style={{ backgroundColor: 'transparent', color: '#4A7A68', fontWeight: '600', fontSize: '16px', padding: '14px 32px', borderRadius: '30px', textDecoration: 'none', border: '2px solid #4A7A68' }}>
+                            See How It Works
                         </a>
                     </div>
 
-                    <p style={{
-                        fontSize: '13px',
-                        color: '#7a9990',
-                    }}>
+                    <p style={{ fontSize: '13px', color: '#7a9990' }}>
                         🌿 Currently in Beta · Science-backed · Free to start
                     </p>
                 </div>
-            </section >
+            </section>
             <HowItWorks />
             <Habits />
             <PointsRewards />
@@ -98,6 +93,6 @@ export default function Home() {
             <FAQ />
             <CTA />
             <Waitlist />
-        </main >
+        </main>
     )
 }

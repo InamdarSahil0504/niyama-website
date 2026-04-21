@@ -1,82 +1,113 @@
 export default function Habits() {
-    const habits = [
-        { emoji: '🌅', title: 'Wake before 7:30 AM', science: 'Consistent wake time is the single most powerful regulator of your circadian rhythm — the biological clock governing cortisol, melatonin, metabolism and cognitive performance. Irregular wake times are directly linked to increased risk of depression, metabolic syndrome and cardiovascular disease.', researcher: 'Andrew Huberman, Stanford' },
-        { emoji: '🌙', title: 'Sleep by 10:30 PM', science: 'Sleep before midnight contains the highest concentration of slow-wave sleep — critical for memory consolidation, cellular repair and metabolic waste clearance. There is no biological function that does not benefit from adequate sleep.', researcher: 'Matthew Walker, UC Berkeley' },
-        { emoji: '👟', title: '10,000 steps daily', science: 'Daily walking reduces all-cause mortality by up to 40%, improves insulin sensitivity, lowers blood pressure and enhances cognitive function. You cannot out-supplement a sedentary lifestyle.', researcher: 'Preventive Medicine Research' },
-        { emoji: '📵', title: 'Screen time under 3 hours', science: 'Blue light after sunset suppresses melatonin by up to 50%. Infinite scroll content hijacks dopamine reward circuits — the same pathways implicated in addiction. Limiting screen time is a daily act of neurological self-defence.', researcher: 'Jonathan Haidt, NYU' },
-        { emoji: '❤️', title: '30 min active heart rate', science: 'Aerobic exercise is the only proven intervention that generates new neurons in the hippocampus — the brain region first destroyed by Alzheimer\'s disease. 30 minutes of elevated heart rate per day is a neurological preservation strategy.', researcher: 'Peter Attia, MD' },
+    const coreHabits = [
+        {
+            emoji: '🌅',
+            title: 'Wake before 7:30 AM',
+            science: 'Consistent wake time is the single most powerful regulator of your circadian rhythm — the biological clock governing cortisol, melatonin, metabolism, and cognitive performance. Irregular wake times are directly linked to increased risk of depression, metabolic syndrome, and cardiovascular disease.',
+            researcher: 'Andrew Huberman, Stanford',
+        },
+        {
+            emoji: '📵',
+            title: 'No phone after 10:30 PM',
+            science: 'Blue light after sunset suppresses melatonin by up to 50%. Infinite scroll hijacks the same dopamine reward circuits implicated in addiction. Cutting off screens before sleep is a daily act of neurological self-defence — and a prerequisite for restorative slow-wave sleep.',
+            researcher: 'Matthew Walker, UC Berkeley · Jonathan Haidt, NYU',
+        },
+        {
+            emoji: '👟',
+            title: 'Daily steps goal',
+            science: 'Daily walking reduces all-cause mortality by up to 40%, improves insulin sensitivity, lowers blood pressure, and enhances cognitive function. Steps are tiered — every level counts. You cannot out-supplement a sedentary lifestyle.',
+            researcher: 'Preventive Medicine Research',
+        },
+    ]
+
+    const libraryPreview = [
+        { emoji: '❤️', title: '30 min active heart rate' },
+        { emoji: '🧘', title: 'Mindfulness or meditation' },
+        { emoji: '💧', title: 'Daily hydration goal' },
+        { emoji: '📖', title: '20 min reading' },
+        { emoji: '🥗', title: 'No processed food' },
+        { emoji: '💪', title: 'Strength training' },
+        { emoji: '🌿', title: 'Time outdoors' },
+        { emoji: '✍️', title: 'Journalling' },
+        { emoji: '🚫', title: 'No alcohol' },
+        { emoji: '🛌', title: 'In bed by 10:30 PM' },
     ]
 
     return (
         <section id="habits" style={{ padding: '100px 24px', backgroundColor: '#F4F7F5' }}>
-            <style>{`
-        .habits-top {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 24px;
-          margin: 0 auto 24px;
-          max-width: 700px;
-        }
-        .habits-bottom {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 24px;
-        }
-        @media (max-width: 768px) {
-          .habits-top {
-            grid-template-columns: 1fr;
-            max-width: 100%;
-          }
-          .habits-bottom {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
             <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+
+                {/* Header */}
                 <div style={{ textAlign: 'center', marginBottom: '64px' }}>
                     <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: '700', color: '#1a2e28', marginBottom: '16px' }}>
-                        The 5 habits
+                        9 habits. Your framework, your way.
                     </h2>
-                    <p style={{ fontSize: '18px', color: '#4a6b62', maxWidth: '560px', margin: '0 auto' }}>
-                        Not chosen arbitrarily. Every habit is backed by decades of peer-reviewed research. Complete any 4 of 5 for a successful day.
+                    <p style={{ fontSize: '18px', color: '#4a6b62', maxWidth: '600px', margin: '0 auto' }}>
+                        Three core habits anchor your day. Then you personalise — choose four from a library of ten science-backed options. Complete at least 5 of 9 for a successful day.
                     </p>
                 </div>
 
-                <div className="habits-top">
-                    {habits.slice(0, 2).map(function (habit) {
-                        return (
-                            <div key={habit.title} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2' }}>
-                                <div style={{ marginBottom: '16px' }}>
-                                    <span style={{ fontSize: '32px' }}>{habit.emoji}</span>
+                {/* Core habits */}
+                <div style={{ marginBottom: '56px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
+                        <div style={{ backgroundColor: '#4A7A68', color: 'white', fontSize: '11px', fontWeight: '700', padding: '4px 14px', borderRadius: '20px', letterSpacing: '0.08em' }}>
+                            CORE HABITS
+                        </div>
+                        <span style={{ fontSize: '13px', color: '#7a9990' }}>Fixed for all users · 100 pts each · at least 2 required for a successful day</span>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
+                        {coreHabits.map(function (habit) {
+                            return (
+                                <div key={habit.title} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2' }}>
+                                    <div style={{ marginBottom: '16px' }}>
+                                        <span style={{ fontSize: '32px' }}>{habit.emoji}</span>
+                                    </div>
+                                    <h3 style={{ fontSize: '17px', fontWeight: '700', color: '#1a2e28', marginBottom: '10px' }}>{habit.title}</h3>
+                                    <p style={{ fontSize: '13px', color: '#4a6b62', lineHeight: '1.75', marginBottom: '16px' }}>{habit.science}</p>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                        <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#4A7A68', flexShrink: 0 }}></div>
+                                        <span style={{ fontSize: '11px', color: '#7a9990', fontStyle: 'italic' }}>{habit.researcher}</span>
+                                    </div>
                                 </div>
-                                <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#1a2e28', marginBottom: '12px' }}>{habit.title}</h3>
-                                <p style={{ fontSize: '14px', color: '#4a6b62', lineHeight: '1.7', marginBottom: '16px' }}>{habit.science}</p>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#5A8A78' }}></div>
-                                    <span style={{ fontSize: '12px', color: '#7a9990', fontStyle: 'italic' }}>{habit.researcher}</span>
-                                </div>
-                            </div>
-                        )
-                    })}
+                            )
+                        })}
+                    </div>
                 </div>
 
-                <div className="habits-bottom">
-                    {habits.slice(2).map(function (habit) {
-                        return (
-                            <div key={habit.title} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2' }}>
-                                <div style={{ marginBottom: '16px' }}>
-                                    <span style={{ fontSize: '32px' }}>{habit.emoji}</span>
+                {/* Library habits */}
+                <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
+                        <div style={{ backgroundColor: '#C9973A', color: 'white', fontSize: '11px', fontWeight: '700', padding: '4px 14px', borderRadius: '20px', letterSpacing: '0.08em' }}>
+                            LIBRARY HABITS
+                        </div>
+                        <span style={{ fontSize: '13px', color: '#7a9990' }}>Pick 4 from 10 options · 50 pts each · swap monthly</span>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '12px', marginBottom: '28px' }}>
+                        {libraryPreview.map(function (habit) {
+                            return (
+                                <div key={habit.title} style={{ backgroundColor: 'white', borderRadius: '12px', padding: '16px', border: '1px solid #d8e8e2', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    <span style={{ fontSize: '20px', flexShrink: 0 }}>{habit.emoji}</span>
+                                    <span style={{ fontSize: '12px', fontWeight: '600', color: '#1a2e28', lineHeight: '1.3' }}>{habit.title}</span>
                                 </div>
-                                <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#1a2e28', marginBottom: '12px' }}>{habit.title}</h3>
-                                <p style={{ fontSize: '14px', color: '#4a6b62', lineHeight: '1.7', marginBottom: '16px' }}>{habit.science}</p>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#5A8A78' }}></div>
-                                    <span style={{ fontSize: '12px', color: '#7a9990', fontStyle: 'italic' }}>{habit.researcher}</span>
-                                </div>
-                            </div>
-                        )
-                    })}
+                            )
+                        })}
+                    </div>
+
+                    {/* Custom habits note */}
+                    <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px 28px', border: '1px dashed #c8e8d8', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+                        <div style={{ fontSize: '28px' }}>✏️</div>
+                        <div>
+                            <div style={{ fontSize: '14px', fontWeight: '700', color: '#1a2e28', marginBottom: '4px' }}>Custom habits</div>
+                            <div style={{ fontSize: '13px', color: '#4a6b62' }}>Plus subscribers can add 1 custom habit. Premium subscribers can add up to 3. Build the exact framework your life needs.</div>
+                        </div>
+                        <div style={{ marginLeft: 'auto', backgroundColor: '#f0f7f4', borderRadius: '20px', padding: '4px 14px', fontSize: '11px', fontWeight: '700', color: '#4A7A68', whiteSpace: 'nowrap' }}>
+                            Plus &amp; Premium
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </section>
     )
