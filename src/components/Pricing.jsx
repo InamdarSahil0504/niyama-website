@@ -1,18 +1,17 @@
 import { useState } from 'react'
 import { useRegion } from '../context/RegionContext'
 
-// ─── Stripe Price IDs (fill in when Stripe goes live) ───────────────────────
+// ─── Stripe Price IDs ────────────────────────────────────────────────────────
 const STRIPE_PRICES = {
-  basic_monthly: null,
-  basic_annual: null,
-  plus_monthly: null,
-  plus_annual: null,
-  premium_monthly: null,
-  premium_annual: null,
+  basic_monthly:   'price_1TPaBo9crPKLFCMF39E116lA',
+  basic_annual:    'price_1TPaBo9crPKLFCMFNkXgFJUF',
+  plus_monthly:    'price_1TPaD49crPKLFCMF22QHLlq1',
+  plus_annual:     'price_1TPaD49crPKLFCMFiYXkQpz0',
+  premium_monthly: 'price_1TPaE09crPKLFCMFaFzsnPrn',
+  premium_annual:  'price_1TPaE09crPKLFCMFIgphzKgO',
 }
 
 function handleSubscribe(priceId) {
-  // TODO: replace with real Stripe checkout call once price IDs are live
   window.location.href = 'https://niyamalife.com/pricing'
 }
 // ─────────────────────────────────────────────────────────────────────────────
@@ -21,7 +20,6 @@ export default function Pricing() {
   const { region } = useRegion()
   const [billing, setBilling] = useState('monthly') // 'monthly' | 'annual'
 
-  // ── Tier definitions ──────────────────────────────────────────────────────
   const tiers = {
     usa: [
       {
@@ -272,7 +270,6 @@ export default function Pricing() {
     <section id="pricing" style={{ padding: '100px 24px', backgroundColor: 'white' }}>
       <div style={{ maxWidth: '1160px', margin: '0 auto' }}>
 
-        {/* ── Header ── */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: '700', color: '#1a2e28', marginBottom: '16px', lineHeight: '1.2' }}>
             Simple, transparent pricing
@@ -281,7 +278,6 @@ export default function Pricing() {
             Start free. Upgrade when you are ready to unlock more rewards.
           </p>
 
-          {/* Billing toggle — USA only */}
           {region !== 'india' && (
             <div style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: '#f0f7f4', borderRadius: '50px', padding: '4px', marginBottom: '8px' }}>
               <button
@@ -315,7 +311,6 @@ export default function Pricing() {
           )}
         </div>
 
-        {/* ── India coming soon banner ── */}
         {region === 'india' && (
           <div style={{ backgroundColor: '#fdeee9', border: '1px solid #f5c4b3', borderRadius: '12px', padding: '16px 24px', textAlign: 'center', marginBottom: '40px' }}>
             <p style={{ fontSize: '14px', color: '#a3442a', margin: 0, fontWeight: '500' }}>
@@ -324,7 +319,6 @@ export default function Pricing() {
           </div>
         )}
 
-        {/* ── Tier cards ── */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', alignItems: 'stretch' }}>
           {currentTiers.map(function (tier) {
             const { price, sub } = getDisplayPrice(tier)
@@ -344,7 +338,6 @@ export default function Pricing() {
                   flexDirection: 'column',
                 }}
               >
-                {/* Badge */}
                 {tier.badge && (
                   <div style={{
                     position: 'absolute', top: '-13px', left: '50%', transform: 'translateX(-50%)',
@@ -356,7 +349,6 @@ export default function Pricing() {
                   </div>
                 )}
 
-                {/* Tier name + price */}
                 <div style={{ marginBottom: '20px' }}>
                   <h3 style={{ fontSize: '15px', fontWeight: '700', color: '#7a9990', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>
                     {tier.name}
@@ -370,7 +362,6 @@ export default function Pricing() {
                       <span style={{ fontSize: '13px', color: '#7a9990', marginBottom: '6px' }}>forever</span>
                     )}
                   </div>
-                  {/* Annual saving pill */}
                   {billing === 'annual' && tier.annualSaving && region !== 'india' && (
                     <div style={{ display: 'inline-block', backgroundColor: '#fff8e6', color: '#C9973A', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '20px', marginTop: '4px' }}>
                       {tier.annualSaving}
@@ -378,7 +369,6 @@ export default function Pricing() {
                   )}
                 </div>
 
-                {/* Reward breakdown */}
                 <div style={{ backgroundColor: tier.bgColor, borderRadius: '14px', padding: '16px', marginBottom: '20px', border: `1px solid ${isPremium ? '#f5c4b3' : '#c8e8d8'}` }}>
                   <div style={{ fontSize: '10px', fontWeight: '700', color: '#7a9990', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
                     Reward potential
@@ -407,7 +397,6 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                {/* Feature list */}
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', flex: 1 }}>
                   {tier.features.map(function (f, i) {
                     return (
@@ -419,7 +408,6 @@ export default function Pricing() {
                   })}
                 </ul>
 
-                {/* CTA */}
                 <button
                   onClick={() => onClickCTA(tier)}
                   style={{
@@ -439,7 +427,6 @@ export default function Pricing() {
           })}
         </div>
 
-        {/* ── What counts as a successful day ── */}
         <div style={{ marginTop: '56px', backgroundColor: '#f0f7f4', borderRadius: '20px', padding: '36px 40px' }}>
           <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#1a2e28', marginBottom: '8px' }}>
             What counts as a successful day?
@@ -463,7 +450,6 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* ── Closing message ── */}
         <div style={{ textAlign: 'center', marginTop: '48px', padding: '36px 40px', backgroundColor: '#f0f7f4', borderRadius: '20px' }}>
           <div style={{ fontSize: '24px', marginBottom: '12px' }}>🌿</div>
           <p style={{ fontSize: '17px', fontWeight: '700', color: '#1a2e28', marginBottom: '8px' }}>
@@ -474,7 +460,6 @@ export default function Pricing() {
           </p>
         </div>
 
-        {/* ── Legal footnote ── */}
         <p style={{ textAlign: 'center', fontSize: '12px', color: '#7a9990', marginTop: '24px', lineHeight: '1.8', maxWidth: '700px', margin: '24px auto 0' }}>
           Rewards are delivered as gift cards via Tremendous and are subject to eligibility criteria. Rewards reset on the 1st of every month. Subscription fees are non-refundable. Reward amounts depend on meeting minimum successful day requirements and are not guaranteed.
         </p>
