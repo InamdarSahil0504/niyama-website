@@ -11,14 +11,31 @@ const STRIPE_PRICES = {
   premium_annual:  'price_1TPaE09crPKLFCMFIgphzKgO',
 }
 
-function handleSubscribe(priceId) {
-  window.location.href = 'https://niyamalife.com/pricing'
+async function handleSubscribe(priceId) {
+  try {
+    const res = await fetch('/api/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ priceId }),
+    })
+    const data = await res.json()
+    if (data.url) {
+      window.location.href = data.url
+    } else {
+      console.error('No checkout URL returned:', data)
+      alert('Something went wrong. Please try again.')
+    }
+  } catch (err) {
+    console.error('Checkout error:', err)
+    alert('Something went wrong. Please try again.')
+  }
 }
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function Pricing() {
   const { region } = useRegion()
-  const [billing, setBilling] = useState('monthly') // 'monthly' | 'annual'
+  const [billing, setBilling] = useState('monthly')
+  const [loading, setLoading] = useState(null)
 
   const tiers = {
     usa: [
@@ -256,14 +273,16 @@ export default function Pricing() {
     return { price: tier.monthly, sub: tier.period }
   }
 
-  function onClickCTA(tier) {
+  async function onClickCTA(tier) {
     if (!tier.isSubscription || region === 'india') {
       window.location.href = 'https://app.niyamalife.com'
       return
     }
     const key = `${tier.priceKey}_${billing}`
     const priceId = STRIPE_PRICES[key]
-    handleSubscribe(priceId)
+    setLoading(tier.name)
+    await handleSubscribe(priceId)
+    setLoading(null)
   }
 
   return (
@@ -324,6 +343,7 @@ export default function Pricing() {
             const { price, sub } = getDisplayPrice(tier)
             const isFree = !tier.isSubscription
             const isPremium = tier.name === 'Premium'
+            const isLoading = loading === tier.name
 
             return (
               <div
@@ -410,6 +430,7 @@ export default function Pricing() {
 
                 <button
                   onClick={() => onClickCTA(tier)}
+                  disabled={isLoading}
                   style={{
                     display: 'block', width: '100%', textAlign: 'center',
                     backgroundColor: tier.highlight ? tier.color : isPremium ? '#C96A52' : 'transparent',
@@ -417,10 +438,12 @@ export default function Pricing() {
                     fontWeight: '700', fontSize: '15px',
                     padding: '14px 24px', borderRadius: '50px',
                     border: tier.highlight || isPremium ? 'none' : `2px solid ${tier.color}`,
-                    cursor: 'pointer', fontFamily: 'inherit',
+                    cursor: isLoading ? 'not-allowed' : 'pointer',
+                    opacity: isLoading ? 0.7 : 1,
+                    fontFamily: 'inherit',
                   }}
                 >
-                  {tier.cta}
+                  {isLoading ? 'Redirecting...' : tier.cta}
                 </button>
               </div>
             )
