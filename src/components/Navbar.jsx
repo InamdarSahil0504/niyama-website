@@ -82,7 +82,7 @@ export default function Navbar() {
                         <span>{region === 'usa' ? 'USD' : 'INR'}</span>
                     </button>
 
-                    <a href="https://niyama-rouge.vercel.app" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#D4735F', color: 'white', fontFamily: 'DM Sans, sans-serif', fontWeight: '600', fontSize: '14px', padding: '10px 20px', borderRadius: '25px', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+                    <a href="https://app.niyamalife.com" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#D4735F', color: 'white', fontFamily: 'DM Sans, sans-serif', fontWeight: '600', fontSize: '14px', padding: '10px 20px', borderRadius: '25px', textDecoration: 'none', whiteSpace: 'nowrap' }}>
                         Start Free
                     </a>
 
@@ -117,7 +117,7 @@ export default function Navbar() {
                     <span>Switch to {region === 'usa' ? '🇮🇳 India' : '🇺🇸 USA'}</span>
                 </button>
 
-                <a href="https://niyama-rouge.vercel.app" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: 'white', color: '#5A8A78', fontFamily: 'DM Sans, sans-serif', fontWeight: '700', fontSize: '16px', padding: '14px 36px', borderRadius: '30px', textDecoration: 'none', marginTop: '8px' }}>
+                <a href="https://app.niyamalife.com" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: 'white', color: '#5A8A78', fontFamily: 'DM Sans, sans-serif', fontWeight: '700', fontSize: '16px', padding: '14px 36px', borderRadius: '30px', textDecoration: 'none', marginTop: '8px' }}>
                     Start Free
                 </a>
             </div>
