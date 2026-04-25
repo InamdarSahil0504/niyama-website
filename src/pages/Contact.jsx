@@ -43,7 +43,7 @@ export default function Contact() {
                     <div>
                         <h2 style={{ fontSize: '24px', fontWeight: '700', color: '#1a2e28', marginBottom: '32px' }}>Send us a message</h2>
                         {status === 'success' ? (
-                            <div style={{ backgroundColor: '#e8f2ee', borderRadius: '16px', padding: '40px', textAlign: 'center', border: '1px solid #5A8A78' }}>
+                            <div style={{ backgroundColor: '#e8f2ee', borderRadius: '16px', padding: '40px', textAlign: 'center', border: '1px solid #4A7A68' }}>
                                 <div style={{ fontSize: '32px', marginBottom: '12px' }}>✅</div>
                                 <h3 style={{ fontSize: '20px', fontWeight: '700', color: '#1a2e28', marginBottom: '8px' }}>Message received.</h3>
                                 <p style={{ fontSize: '15px', color: '#4a6b62', margin: 0 }}>We will get back to you within 48 hours.</p>
@@ -61,11 +61,11 @@ export default function Contact() {
                                     <option value="feedback">Product feedback</option>
                                 </select>
                                 <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Your message" required rows={5} style={{ padding: '14px 20px', borderRadius: '12px', border: '1px solid #d8e8e2', fontSize: '15px', color: '#1a2e28', backgroundColor: '#F4F7F5', outline: 'none', resize: 'vertical', fontFamily: 'DM Sans, sans-serif' }} />
-                                <button type="submit" disabled={status === 'loading'} style={{ backgroundColor: '#5A8A78', color: 'white', fontWeight: '700', fontSize: '15px', padding: '14px 32px', borderRadius: '25px', border: 'none', cursor: 'pointer' }}>
+                                <button type="submit" disabled={status === 'loading'} style={{ backgroundColor: '#4A7A68', color: 'white', fontWeight: '700', fontSize: '15px', padding: '14px 32px', borderRadius: '25px', border: 'none', cursor: 'pointer' }}>
                                     {status === 'loading' ? 'Sending...' : 'Send Message'}
                                 </button>
                                 {status === 'error' && (
-                                    <p style={{ fontSize: '13px', color: '#D4735F', margin: 0 }}>Something went wrong. Please email us directly at info@niyamalife.com</p>
+                                    <p style={{ fontSize: '13px', color: '#C96A52', margin: 0 }}>Something went wrong. Please email us directly at info@niyamalife.com</p>
                                 )}
                             </form>
                         )}
@@ -88,7 +88,7 @@ export default function Contact() {
                             <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '24px', border: '1px solid #d8e8e2' }}>
                                 <div style={{ fontSize: '24px', marginBottom: '8px' }}>💼</div>
                                 <h3 style={{ fontSize: '15px', fontWeight: '700', color: '#1a2e28', marginBottom: '4px' }}>Founder</h3>
-                                <a href="https://www.linkedin.com/in/sahil-inamdar" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#5A8A78', textDecoration: 'none', fontWeight: '600' }}>Sahil Inamdar on LinkedIn</a>
+                                <p style={{ fontSize: '14px', color: '#4a6b62', margin: 0 }}>Sahil Inamdar · info@niyamalife.com</p>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,6 @@
 import ComingSoonLanding from './pages/ComingSoonLanding'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { RegionProvider, useRegion } from './context/RegionContext'
-import RegionSelector from './components/RegionSelector'
+import { RegionProvider } from './context/RegionContext'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -18,21 +17,10 @@ import NotFound from './pages/NotFound'
 import CookieConsent from './components/CookieConsent'
 
 const COMING_SOON = false
+
 function AppContent() {
-  const { region, loading } = useRegion()
   if (COMING_SOON) {
     return <ComingSoonLanding />
-  }
-  if (loading) {
-    return (
-      <div style={{ position: 'fixed', inset: 0, backgroundColor: '#F4F7F5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <span style={{ fontSize: '48px' }}>🌿</span>
-      </div>
-    )
-  }
-
-  if (!region) {
-    return <RegionSelector />
   }
 
   return (

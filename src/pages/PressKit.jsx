@@ -143,7 +143,6 @@ export default function PressKit() {
                         <p style={{ fontSize: '14px', color: '#4a6b62', lineHeight: '1.75', margin: '0 0 16px' }}>
                             Sahil Inamdar is a biotech researcher and founder of Niyama Life. He holds a PhD in Chemical Engineering from Arizona State University, has published 20+ peer-reviewed papers with 700+ citations, and spent years working on cancer immunotherapy and neurodegenerative diseases including Alzheimer's and Parkinson's. He built Niyama Life from a personal conviction that daily discipline should be rewarded — not just tracked.
                         </p>
-                        <a href="https://www.linkedin.com/in/sahil-inamdar" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#4A7A68', fontWeight: '600', textDecoration: 'none' }}>LinkedIn Profile →</a>
                     </div>
 
                     <div style={{ backgroundColor: '#1a2e28', borderRadius: '16px', padding: '32px', textAlign: 'center' }}>

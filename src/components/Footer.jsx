@@ -25,7 +25,7 @@ export default function Footer() {
                         <h4 style={{ fontSize: '12px', fontWeight: '700', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '20px' }}>Product</h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                             <a href="/#how-it-works" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>How It Works</a>
-                            <a href="/#habits" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>The 5 Habits</a>
+                            <a href="/#habits" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>The Habits</a>
                             <a href="/pricing" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Pricing</a>
                             <a href="/science" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>The Science</a>
                         </div>
@@ -55,7 +55,7 @@ export default function Footer() {
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                         <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', margin: 0 }}>
-                            © 2026 Niyama Life · Currently in Beta. Rewards not yet live.
+                            © 2026 Niyama Life Inc.
                         </p>
                         <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)', margin: 0 }}>
                             {region === 'india' ? '🇮🇳 India launch coming soon.' : '🇺🇸 Available in the United States.'}

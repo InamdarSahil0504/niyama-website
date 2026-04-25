@@ -6,11 +6,8 @@ import Pricing from '../components/Pricing'
 import Science from '../components/Science'
 import WhyNiyama from '../components/WhyNiyama'
 import Founder from '../components/Founder'
-import BetaTransparency from '../components/BetaTransparency'
-import Testimonials from '../components/Testimonials'
 import FAQ from '../components/FAQ'
 import CTA from '../components/CTA'
-import Waitlist from '../components/Waitlist'
 
 export default function Home() {
     return (
@@ -77,7 +74,7 @@ export default function Home() {
                     </div>
 
                     <p style={{ fontSize: '13px', color: '#7a9990' }}>
-                        🌿 Currently in Beta · Science-backed · Free to start
+                        🌿 Science-backed · Free to start · Real rewards
                     </p>
                 </div>
             </section>
@@ -88,11 +85,8 @@ export default function Home() {
             <Science />
             <WhyNiyama />
             <Founder />
-            <BetaTransparency />
-            {/* <Testimonials /> */}
             <FAQ />
             <CTA />
-            <Waitlist />
         </main>
     )
 }

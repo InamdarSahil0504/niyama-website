@@ -20,18 +20,31 @@ export default function Habits() {
         },
     ]
 
-    const libraryPreview = [
+    const libraryRow1 = [
         { emoji: '❤️', title: '30 min active heart rate' },
         { emoji: '🧘', title: 'Mindfulness or meditation' },
         { emoji: '💧', title: 'Daily hydration goal' },
         { emoji: '📖', title: '20 min reading' },
         { emoji: '🥗', title: 'No processed food' },
         { emoji: '💪', title: 'Strength training' },
+    ]
+
+    const libraryRow2 = [
         { emoji: '🌿', title: 'Time outdoors' },
         { emoji: '✍️', title: 'Journalling' },
         { emoji: '🚫', title: 'No alcohol' },
         { emoji: '🛌', title: 'In bed by 10:30 PM' },
     ]
+
+    const cardStyle = {
+        backgroundColor: 'white',
+        borderRadius: '12px',
+        padding: '16px',
+        border: '1px solid #d8e8e2',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '10px',
+    }
 
     return (
         <section id="habits" style={{ padding: '100px 24px', backgroundColor: '#F4F7F5' }}>
@@ -84,10 +97,23 @@ export default function Habits() {
                         <span style={{ fontSize: '13px', color: '#7a9990' }}>Pick 4 from 10 options · 50 pts each · swap monthly</span>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '12px', marginBottom: '28px' }}>
-                        {libraryPreview.map(function (habit) {
+                    {/* Row 1 — 6 items */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '12px', marginBottom: '12px' }}>
+                        {libraryRow1.map(function (habit) {
                             return (
-                                <div key={habit.title} style={{ backgroundColor: 'white', borderRadius: '12px', padding: '16px', border: '1px solid #d8e8e2', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                <div key={habit.title} style={cardStyle}>
+                                    <span style={{ fontSize: '20px', flexShrink: 0 }}>{habit.emoji}</span>
+                                    <span style={{ fontSize: '12px', fontWeight: '600', color: '#1a2e28', lineHeight: '1.3' }}>{habit.title}</span>
+                                </div>
+                            )
+                        })}
+                    </div>
+
+                    {/* Row 2 — 4 items centred */}
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '28px', flexWrap: 'wrap' }}>
+                        {libraryRow2.map(function (habit) {
+                            return (
+                                <div key={habit.title} style={{ ...cardStyle, width: 'calc(16.666% - 6px)', minWidth: '140px' }}>
                                     <span style={{ fontSize: '20px', flexShrink: 0 }}>{habit.emoji}</span>
                                     <span style={{ fontSize: '12px', fontWeight: '600', color: '#1a2e28', lineHeight: '1.3' }}>{habit.title}</span>
                                 </div>

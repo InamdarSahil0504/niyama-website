@@ -2,16 +2,16 @@ export default function WhyNiyama() {
     const differentiators = [
         { title: 'Tracking alone does not change behaviour.', description: 'Every habit app tracks your streaks. None of them change the underlying economics of the decision. Skipping a habit costs nothing — so people skip. Niyama changes that.' },
         { title: 'You never risk your own money.', description: 'Unlike cash competition apps where you stake your own money, Niyama works differently. You pay a small subscription and get rewarded when you succeed. No financial risk. Just upside.' },
-        { title: 'Virtual points fade. Real rewards do not.', description: 'Badges and leaderboards create a brief dopamine spike and then disappear. Real financial rewards create real consequences. That is the difference between an app you open once and a habit that sticks.' },
+        { title: 'Virtual points fade. Real rewards do not.', description: 'Badges and leaderboards create a brief dopamine spike and then disappear. Real world rewards create real consequences. That is the difference between an app you open once and a habit that sticks.' },
     ]
 
     const positives = [
         { emoji: '🔬', title: 'Built on real science', description: 'Every habit chosen because the evidence is overwhelming. Not because it is trendy.' },
-        { emoji: '💰', title: 'Real financial rewards', description: 'Not badges. Not streaks. Actual money redeemable at hundreds of brands.' },
+        { emoji: '💰', title: 'Real world rewards', description: 'Not badges. Not streaks. Actual gift cards redeemable at hundreds of brands.' },
         { emoji: '🌿', title: 'Holistic by design', description: 'Sleep, movement, screen discipline, wake time — the full picture of daily health.' },
         { emoji: '🧠', title: 'Behavioural science, not willpower', description: 'The same reinforcement principles used in clinical research, built into your daily routine.' },
-        { emoji: '🎯', title: 'Forgiving by design', description: 'Any 4 of 5 habits counts as a successful day. Built for real life, not perfection.' },
-        { emoji: '🔓', title: 'Start completely free', description: 'No credit card. No commitment. Earn real rewards for your first 3 months before spending a penny.' },
+        { emoji: '🎯', title: 'Forgiving by design', description: 'Any 5 of 9 habits counts as a successful day. Built for real life, not perfection.' },
+        { emoji: '🔓', title: 'Start completely free', description: 'No credit card. No commitment. Get real rewards for your first 3 months before spending a penny.' },
     ]
 
     return (
@@ -30,7 +30,7 @@ export default function WhyNiyama() {
                     {differentiators.map(function (item) {
                         return (
                             <div key={item.title} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2' }}>
-                                <div style={{ width: '32px', height: '3px', backgroundColor: '#D4735F', borderRadius: '2px', marginBottom: '20px' }}></div>
+                                <div style={{ width: '32px', height: '3px', backgroundColor: '#C96A52', borderRadius: '2px', marginBottom: '20px' }}></div>
                                 <h3 style={{ fontSize: '17px', fontWeight: '700', color: '#1a2e28', marginBottom: '12px', lineHeight: '1.4' }}>
                                     {item.title}
                                 </h3>
