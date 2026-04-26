@@ -69,8 +69,8 @@ export default function FAQ() {
         },
         {
             category: 'General',
-            question: 'Can I use Niyama Life in India?',
-            answer: 'India is coming soon. You can join the India waitlist now and you will be among the first to know when we launch. All INR pricing, local payment options, and India-specific reward delivery will be available at launch.',
+            question: 'Can I use Niyama Life outside the USA?',
+            answer: 'Niyama Life is currently available in the USA. International expansion is on the roadmap — India is next, followed by other markets. If you are outside the USA and want to be notified when we launch in your region, get in touch at info@niyamalife.com.',
         },
         {
             category: 'General',
