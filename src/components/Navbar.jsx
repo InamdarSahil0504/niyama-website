@@ -40,8 +40,8 @@ export default function Navbar() {
     const links = [
         { label: 'How It Works', href: '/#how-it-works' },
         { label: 'Habits', href: '/#habits' },
-        { label: 'Pricing', href: '/pricing' },
         { label: 'Science', href: '/science' },
+        { label: 'Pricing', href: '/pricing' },
         { label: 'About', href: '/about' },
         { label: 'Blog', href: '/blog' },
         { label: 'Investors', href: '/investor' },
@@ -82,7 +82,7 @@ export default function Navbar() {
                         <span>{region === 'usa' ? 'USD' : 'INR'}</span>
                     </button>
 
-                    <a href="https://app.niyamalife.com" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#D4735F', color: 'white', fontFamily: 'DM Sans, sans-serif', fontWeight: '600', fontSize: '14px', padding: '10px 20px', borderRadius: '25px', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+                    <a href="https://app.niyamalife.com" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#C96A52', color: 'white', fontFamily: 'DM Sans, sans-serif', fontWeight: '600', fontSize: '14px', padding: '10px 20px', borderRadius: '25px', textDecoration: 'none', whiteSpace: 'nowrap' }}>
                         Start Free
                     </a>
 
@@ -94,7 +94,7 @@ export default function Navbar() {
                 </div>
             </nav>
 
-            <div style={{ position: 'fixed', inset: 0, backgroundColor: '#5A8A78', zIndex: 2000, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '32px', transform: menuOpen ? 'translateX(0)' : 'translateX(100%)', transition: 'transform 0.4s ease' }}>
+            <div style={{ position: 'fixed', inset: 0, backgroundColor: '#4A7A68', zIndex: 2000, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '32px', transform: menuOpen ? 'translateX(0)' : 'translateX(100%)', transition: 'transform 0.4s ease' }}>
                 <button onClick={closeMenu} style={{ position: 'absolute', top: '24px', right: '24px', background: 'none', border: 'none', cursor: 'pointer', color: 'white', fontSize: '32px', lineHeight: 1 }} aria-label="Close menu">
                     ✕
                 </button>
@@ -117,7 +117,7 @@ export default function Navbar() {
                     <span>Switch to {region === 'usa' ? '🇮🇳 India' : '🇺🇸 USA'}</span>
                 </button>
 
-                <a href="https://app.niyamalife.com" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: 'white', color: '#5A8A78', fontFamily: 'DM Sans, sans-serif', fontWeight: '700', fontSize: '16px', padding: '14px 36px', borderRadius: '30px', textDecoration: 'none', marginTop: '8px' }}>
+                <a href="https://app.niyamalife.com" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: 'white', color: '#4A7A68', fontFamily: 'DM Sans, sans-serif', fontWeight: '700', fontSize: '16px', padding: '14px 36px', borderRadius: '30px', textDecoration: 'none', marginTop: '8px' }}>
                     Start Free
                 </a>
             </div>
