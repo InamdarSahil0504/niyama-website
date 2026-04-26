@@ -40,11 +40,11 @@ export default function FAQ() {
             question: 'Who gets streak freezes?',
             answer: 'Streak freezes are available to Plus and Premium subscribers only. You get one freeze per calendar month. Unused freezes do not carry over to the next month.',
         },
-        // Rewards & Milestones
+        // Rewards
         {
             category: 'Rewards',
             question: 'Are the rewards real money?',
-            answer: 'Yes. Rewards are real and delivered as gift cards via Tremendous — redeemable at hundreds of brands including Amazon, PayPal, and more. Rewards are not live during Beta 1. They will go live with the Beta 2 launch.',
+            answer: 'Yes. Rewards are real and delivered as gift cards via our rewards partner — redeemable at hundreds of brands. Rewards are calculated at the end of each month and delivered directly to your account.',
         },
         {
             category: 'Rewards',
@@ -59,7 +59,7 @@ export default function FAQ() {
         {
             category: 'Rewards',
             question: 'When and how do I receive my rewards?',
-            answer: 'Rewards are calculated at the end of each calendar month and delivered as gift cards via Tremendous. You will receive a notification when your rewards are ready. Rewards reset on the 1st of every month — they do not roll over.',
+            answer: 'Rewards are calculated at the end of each calendar month and delivered as gift cards via our rewards partner. You will receive a notification when your rewards are ready. Rewards reset on the 1st of every month — they do not roll over.',
         },
         // General
         {
@@ -100,7 +100,6 @@ export default function FAQ() {
         <section style={{ padding: '100px 24px', backgroundColor: '#F4F7F5' }}>
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
 
-                {/* Header */}
                 <div style={{ textAlign: 'center', marginBottom: '64px' }}>
                     <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: '700', color: '#1a2e28', marginBottom: '16px' }}>
                         Frequently asked questions
@@ -110,10 +109,8 @@ export default function FAQ() {
                     </p>
                 </div>
 
-                {/* FAQs grouped by category */}
                 {categories.map(function (category) {
                     const categoryFaqs = faqs.filter(function (f) { return f.category === category })
-                    const globalOffset = faqs.findIndex(function (f) { return f.category === category })
 
                     return (
                         <div key={category} style={{ marginBottom: '48px' }}>
