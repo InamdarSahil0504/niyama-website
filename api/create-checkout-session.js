@@ -21,7 +21,7 @@ export default async function handler(req, res) {
       customer_email: userEmail || undefined,
       client_reference_id: userId || undefined,
       success_url: 'https://app.niyamalife.com?checkout=success',
-      cancel_url: 'https://niyamalife.com/pricing',
+      cancel_url: 'https://www.niyamalife.com/pricing',
       metadata: { priceId },
     })
 
