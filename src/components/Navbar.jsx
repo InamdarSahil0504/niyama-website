@@ -61,9 +61,8 @@ export default function Navbar() {
       `}</style>
 
             <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, backgroundColor: scrolled ? 'rgba(244,247,245,0.95)' : '#F4F7F5', borderBottom: scrolled ? '1px solid #d8e8e2' : '1px solid transparent', transition: 'all 0.3s ease', padding: '0 24px', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
-                    <span style={{ fontSize: '20px' }}>🌿</span>
-                    <span style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: '700', fontSize: '18px', color: '#1a2e28' }}>Niyama Life</span>
+                <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                    <img src="/niyama-wordmark-light.svg" alt="Niyama Life" style={{ height: '28px', width: 'auto' }} />
                 </a>
 
                 <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '28px' }}>
@@ -99,9 +98,8 @@ export default function Navbar() {
                     ✕
                 </button>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                    <span style={{ fontSize: '24px' }}>🌿</span>
-                    <span style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: '700', fontSize: '22px', color: 'white' }}>Niyama Life</span>
+                <div style={{ marginBottom: '8px' }}>
+                    <img src="/niyama-wordmark-dark.svg" alt="Niyama Life" style={{ height: '32px', width: 'auto' }} />
                 </div>
 
                 {links.map(function (link) {
