@@ -8,6 +8,7 @@ export default function About() {
             <SEO title="About" description="Learn about Niyama Life and the scientist who built it. Built by a biotech researcher who spent five years watching preventable disease erase people." path="/about" />
             <section style={{ padding: '100px 24px', backgroundColor: '#F4F7F5', textAlign: 'center' }}>
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <img src="/niyama-icon.svg" alt="Niyama Life" style={{ height: '72px', width: 'auto', marginBottom: '32px', borderRadius: '18px' }} />
                     <div style={{ display: 'inline-block', backgroundColor: '#e8f2ee', color: '#3d6b5c', fontSize: '13px', fontWeight: '600', padding: '6px 16px', borderRadius: '20px', marginBottom: '24px' }}>
                         Our story
                     </div>
@@ -34,8 +35,8 @@ export default function About() {
                                 In yogic philosophy, Niyama represents the practice of showing up for yourself — consistently, honestly, without external pressure. Inner rules. Self-commitment. Daily discipline not for anyone else, but for yourself.
                             </p>
                         </div>
-                        <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
-                            <div style={{ fontSize: '48px', marginBottom: '16px' }}>🌿</div>
+                        <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '40px', textAlign: 'center', border: '1px solid #d8e8e2' }}>
+                            <img src="/niyama-icon.svg" alt="Niyama Life" style={{ height: '80px', width: 'auto', marginBottom: '20px', borderRadius: '20px' }} />
                             <p style={{ fontSize: '28px', fontWeight: '700', color: '#4A7A68', marginBottom: '8px', fontStyle: 'italic' }}>Niyama</p>
                             <p style={{ fontSize: '14px', color: '#7a9990', marginBottom: '4px' }}>Nee-yah-ma</p>
                             <p style={{ fontSize: '14px', color: '#4a6b62', lineHeight: '1.6' }}>Personal observance · Self-discipline · Inner commitment</p>
