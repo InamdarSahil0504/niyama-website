@@ -48,12 +48,77 @@ export default function Investor() {
         )
     }
 
+    const traction = [
+        { stat: 'Live', label: 'Web app at app.niyamalife.com — fully functional' },
+        { stat: 'Live', label: 'Website at niyamalife.com — full 10-page site' },
+        { stat: 'Live', label: 'Stripe subscriptions — all 4 tiers, monthly + annual' },
+        { stat: 'Built', label: 'React Native mobile app — all 5 tabs complete' },
+        { stat: 'Live', label: 'PostHog + Mixpanel — analytics wired across all events' },
+        { stat: 'Live', label: 'Delaware C-Corp incorporated — EIN 42-2077253' },
+        { stat: 'Approved', label: 'Tremendous — gift card reward delivery approved' },
+        { stat: 'Pending', label: 'App Store + Google Play — blocked on Apple Developer D-U-N-S' },
+    ]
+
+    const roadmap = [
+        {
+            label: 'Completed',
+            color: '#4A7A68',
+            bg: '#e8f5f0',
+            border: '#c8e8d8',
+            items: [
+                'Beta 2 web app — 9-habit framework, milestone rewards, Stripe subscriptions live',
+                'Marketing website — 10 pages, full brand identity, Stripe checkout',
+                'React Native mobile app — 5 tabs, onboarding, mood tracking, analytics, UI polish',
+                'Delaware C-Corp incorporation — EIN issued, 83(b) filed',
+                'Tremendous gift card rewards — production account approved',
+                'PostHog + Mixpanel analytics — wired across all platforms',
+            ]
+        },
+        {
+            label: 'In Progress — May 2026',
+            color: '#C9973A',
+            bg: '#fff8e6',
+            border: '#f0d080',
+            items: [
+                'Apple Developer account — D-U-N-S submitted to D&B, awaiting number',
+                'Tremendous reward payout edge function — monthly automated delivery',
+                'Stripe webhook handler — subscription tier sync to Supabase',
+                'YC Summer 2026 application — target batch',
+            ]
+        },
+        {
+            label: 'Next — Q3 2026',
+            color: '#4A7A68',
+            bg: '#F4F7F5',
+            border: '#d8e8e2',
+            items: [
+                'App Store + Google Play submission — pending Apple Developer account',
+                'Apple HealthKit + Google Health Connect — automatic habit verification',
+                'Push notifications — wake alert, streak protection, reward delivery',
+                'Grow to 500+ active users — first real cohort data for YC',
+            ]
+        },
+        {
+            label: 'Post-seed — Q4 2026 onwards',
+            color: '#4A7A68',
+            bg: '#F4F7F5',
+            border: '#d8e8e2',
+            items: [
+                'India market — Razorpay, INR rewards, DPDPA compliance, local entity',
+                'AI midday nudge — Claude API personalised habit coaching at noon',
+                'Social sharing with branded achievement cards',
+                'Referral system — growth loop with reward bonuses',
+                'Seed round — marketing, full-time founder salary, India expansion',
+            ]
+        },
+    ]
+
     return (
         <main style={{ paddingTop: '64px' }}>
             <section style={{ padding: '100px 24px', backgroundColor: '#1a2e28', textAlign: 'center' }}>
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                     <div style={{ display: 'inline-block', backgroundColor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.7)', fontSize: '13px', fontWeight: '600', padding: '6px 16px', borderRadius: '20px', marginBottom: '24px' }}>
-                        Investor Overview · Confidential
+                        Investor Overview · Confidential · May 2026
                     </div>
                     <h1 style={{ fontSize: 'clamp(36px, 6vw, 64px)', fontWeight: '700', color: 'white', lineHeight: '1.15', marginBottom: '24px', letterSpacing: '-1px' }}>
                         Niyama Life
@@ -70,6 +135,7 @@ export default function Investor() {
             <section style={{ padding: '80px 24px', backgroundColor: 'white' }}>
                 <div style={{ maxWidth: '900px', margin: '0 auto' }}>
 
+                    {/* One-line pitch */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The one-line pitch</h2>
                         <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2' }}>
@@ -79,6 +145,7 @@ export default function Investor() {
                         </div>
                     </div>
 
+                    {/* Problem */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The problem</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -98,6 +165,7 @@ export default function Investor() {
                         </div>
                     </div>
 
+                    {/* Solution */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The solution</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -117,14 +185,15 @@ export default function Investor() {
                         </div>
                     </div>
 
+                    {/* Why now */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Why now</h2>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
                             {[
-                                { title: 'Post-pandemic health awareness', description: 'Consumer health consciousness is at an all-time high.' },
-                                { title: 'Wearables mainstream', description: 'Health tracking is already a daily habit for millions.' },
-                                { title: 'Health and fintech converging', description: 'Financial wellness and physical wellness are merging markets.' },
-                                { title: 'Behaviour change is proven', description: 'The research on financial incentives and habit formation is robust and replicated.' },
+                                { title: 'Post-pandemic health awareness', description: 'Consumer health consciousness is at an all-time high. People are actively looking for tools that work.' },
+                                { title: 'Wearables mainstream', description: 'Health tracking is already a daily habit for hundreds of millions. The behaviour infrastructure exists.' },
+                                { title: 'Health and fintech converging', description: 'Financial wellness and physical wellness are merging into a single consumer category.' },
+                                { title: 'Behaviour change is proven', description: 'The research on financial incentives and habit formation is robust, replicated, and well-understood.' },
                             ].map(function (item) {
                                 return (
                                     <div key={item.title} style={{ backgroundColor: '#F4F7F5', borderRadius: '12px', padding: '24px', border: '1px solid #d8e8e2' }}>
@@ -136,6 +205,7 @@ export default function Investor() {
                         </div>
                     </div>
 
+                    {/* Market size */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Market size</h2>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
@@ -156,6 +226,7 @@ export default function Investor() {
                         </div>
                     </div>
 
+                    {/* Business model */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Business model</h2>
                         <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2', marginBottom: '24px' }}>
@@ -166,66 +237,87 @@ export default function Investor() {
                                 Rewards are progressive — base cap plus milestone bonuses that unlock only when users hit 10-day, 20-day, successful month, and perfect month thresholds. This means reward costs scale with the most engaged users, who also have the highest retention and LTV.
                             </p>
                             <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', margin: 0 }}>
-                                India pricing is structured separately in INR via Razorpay and a local entity, planned post-seed.
+                                All subscriptions are web-based — users subscribe at niyamalife.com/pricing, bypassing Apple's 30% and Google's 15% commission entirely. India pricing is structured separately in INR, planned post-seed.
                             </p>
                         </div>
-
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
                             {[
-                                { tier: 'Basic', price: '$0.99/mo', maxReward: '$5.00/mo', margin: '~$0.99 base' },
-                                { tier: 'Plus', price: '$4.99/mo', maxReward: '$17.50/mo', margin: 'Milestone-gated' },
-                                { tier: 'Premium', price: '$14.99/mo', maxReward: '$45.00/mo', margin: 'Milestone-gated' },
+                                { tier: 'Basic', price: '$0.99/mo', annual: '$9.99/yr', maxReward: '$5.00/mo', note: 'Flat cap' },
+                                { tier: 'Plus', price: '$4.99/mo', annual: '$49.99/yr', maxReward: '$17.50/mo', note: 'Milestone-gated' },
+                                { tier: 'Premium', price: '$14.99/mo', annual: '$149.99/yr', maxReward: '$45.00/mo', note: 'Milestone-gated' },
                             ].map(function (t) {
                                 return (
                                     <div key={t.tier} style={{ backgroundColor: 'white', borderRadius: '12px', padding: '20px', border: '1px solid #d8e8e2' }}>
-                                        <div style={{ fontSize: '14px', fontWeight: '700', color: '#1a2e28', marginBottom: '8px' }}>{t.tier}</div>
-                                        <div style={{ fontSize: '13px', color: '#4a6b62', marginBottom: '4px' }}>Price: <strong>{t.price}</strong></div>
+                                        <div style={{ fontSize: '15px', fontWeight: '700', color: '#1a2e28', marginBottom: '10px' }}>{t.tier}</div>
+                                        <div style={{ fontSize: '13px', color: '#4a6b62', marginBottom: '4px' }}>Monthly: <strong>{t.price}</strong></div>
+                                        <div style={{ fontSize: '13px', color: '#4a6b62', marginBottom: '4px' }}>Annual: <strong>{t.annual}</strong></div>
                                         <div style={{ fontSize: '13px', color: '#4a6b62', marginBottom: '4px' }}>Max reward: <strong>{t.maxReward}</strong></div>
-                                        <div style={{ fontSize: '11px', color: '#7a9990' }}>{t.margin}</div>
+                                        <div style={{ fontSize: '11px', color: '#7a9990', marginTop: '6px' }}>{t.note}</div>
                                     </div>
                                 )
                             })}
                         </div>
                     </div>
 
+                    {/* Traction */}
                     <div style={{ marginBottom: '80px' }}>
-                        <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Traction</h2>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '16px' }}>
-                            {[
-                                { stat: 'Beta 1', label: 'Fully functional product — live' },
-                                { stat: 'Beta 2', label: 'Web app complete — 9-habit framework' },
-                                { stat: 'PWA', label: 'Live at app.niyamalife.com' },
-                                { stat: 'Pre-revenue', label: 'Stripe activates at Beta 2 launch' },
-                            ].map(function (item) {
+                        <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Traction — May 2026</h2>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+                            {traction.map(function (item) {
+                                const isLive = item.stat === 'Live'
+                                const isBuilt = item.stat === 'Built'
+                                const isApproved = item.stat === 'Approved'
+                                const bgColor = isLive ? '#e8f5f0' : isBuilt ? '#e8f5f0' : isApproved ? '#fff8e6' : '#F4F7F5'
+                                const statColor = isLive || isBuilt ? '#4A7A68' : isApproved ? '#C9973A' : '#7a9990'
                                 return (
-                                    <div key={item.stat} style={{ backgroundColor: '#e8f5f0', borderRadius: '12px', padding: '24px', textAlign: 'center' }}>
-                                        <div style={{ fontSize: '16px', fontWeight: '700', color: '#4A7A68', marginBottom: '4px' }}>{item.stat}</div>
-                                        <div style={{ fontSize: '12px', color: '#4a6b62' }}>{item.label}</div>
+                                    <div key={item.label} style={{ backgroundColor: bgColor, borderRadius: '12px', padding: '20px', border: '1px solid #d8e8e2' }}>
+                                        <div style={{ fontSize: '12px', fontWeight: '700', color: statColor, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '6px' }}>{item.stat}</div>
+                                        <div style={{ fontSize: '13px', color: '#4a6b62', lineHeight: '1.5' }}>{item.label}</div>
                                     </div>
                                 )
                             })}
                         </div>
                     </div>
 
+                    {/* Roadmap */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Roadmap</h2>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                            {[
-                                { label: 'Phase 5 — Now', description: 'Website updated for Beta 2 launch. Stripe subscriptions and real rewards go live simultaneously with the Beta 2 web app.' },
-                                { label: 'Phase 6 — Next', description: 'React Native app for iOS and Android via Expo. Apple HealthKit and Google Health Connect integration. Push notifications, sleep mode, and in-app AI coaching.' },
-                                { label: 'Phase 7 — Post-seed', description: 'India market launch — Razorpay payments, INR rewards, DPDPA compliance, local entity. Referral and social sharing growth loops.' },
-                                { label: 'YC Winter 2027', description: 'Target application cycle. Building toward the metrics and story that make Niyama Life a compelling YC application.' },
-                            ].map(function (item) {
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                            {roadmap.map(function (phase) {
                                 return (
-                                    <div key={item.label} style={{ backgroundColor: '#F4F7F5', borderRadius: '12px', padding: '24px', border: '1px solid #d8e8e2', display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                                        <div style={{ fontSize: '12px', fontWeight: '700', color: '#4A7A68', textTransform: 'uppercase', letterSpacing: '0.05em', minWidth: '100px', paddingTop: '2px', flexShrink: 0 }}>{item.label}</div>
-                                        <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.7', margin: 0 }}>{item.description}</p>
+                                    <div key={phase.label} style={{ backgroundColor: phase.bg, borderRadius: '16px', padding: '28px 32px', border: `1px solid ${phase.border}` }}>
+                                        <div style={{ fontSize: '12px', fontWeight: '700', color: phase.color, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '16px' }}>{phase.label}</div>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                            {phase.items.map(function (item, i) {
+                                                return (
+                                                    <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                                                        <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: phase.color, flexShrink: 0, marginTop: '6px' }}></div>
+                                                        <p style={{ fontSize: '14px', color: '#4a6b62', lineHeight: '1.65', margin: 0 }}>{item}</p>
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
                                     </div>
                                 )
                             })}
                         </div>
+
+                        {/* YC callout */}
+                        <div style={{ backgroundColor: '#1a2e28', borderRadius: '16px', padding: '32px', marginTop: '24px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+                            <div style={{ flex: 1, minWidth: '200px' }}>
+                                <div style={{ fontSize: '12px', fontWeight: '700', color: '#C9973A', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>YC Summer 2026</div>
+                                <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.7', margin: 0 }}>
+                                    Targeting Y Combinator Summer 2026. Application deadline approximately September 2026. Deal: $500,000 for 7% equity. Use of funds: marketing, full-time founder salary, India launch, first hire.
+                                </p>
+                            </div>
+                            <div style={{ backgroundColor: 'rgba(255,255,255,0.08)', borderRadius: '12px', padding: '20px 28px', textAlign: 'center', flexShrink: 0 }}>
+                                <div style={{ fontSize: '28px', fontWeight: '700', color: '#C9973A', marginBottom: '4px' }}>$500K</div>
+                                <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)' }}>for 7% equity</div>
+                            </div>
+                        </div>
                     </div>
 
+                    {/* Founder */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The founder</h2>
                         <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2' }}>
@@ -233,10 +325,10 @@ export default function Investor() {
                                 <div style={{ width: '64px', height: '64px', borderRadius: '50%', backgroundColor: '#4A7A68', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', fontWeight: '700', color: 'white', flexShrink: 0 }}>S</div>
                                 <div>
                                     <div style={{ fontSize: '18px', fontWeight: '700', color: '#1a2e28' }}>Sahil Inamdar</div>
-                                    <div style={{ fontSize: '13px', color: '#7a9990' }}>Founder & CEO · Niyama Life</div>
+                                    <div style={{ fontSize: '13px', color: '#7a9990' }}>Founder & CEO · Niyama Life, Inc.</div>
                                 </div>
                             </div>
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px', marginBottom: '20px' }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px', marginBottom: '24px' }}>
                                 {[
                                     { stat: 'PhD', label: 'Chemical Engineering, ASU' },
                                     { stat: '700+', label: 'Research citations' },
@@ -252,23 +344,27 @@ export default function Investor() {
                                 })}
                             </div>
                             <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', marginBottom: '16px' }}>
-                                Sahil spent years working on cancer immunotherapy and neurodegenerative diseases including Alzheimer's and Parkinson's. He built Niyama Life from a personal conviction that the diseases he spent his career trying to cure are largely preventable — and that the gap between knowing and doing is a behavioural economics problem, not an information problem.
+                                Sahil spent years working on cancer immunotherapy and neurodegenerative diseases including Alzheimer's, Parkinson's, and traumatic brain injury. He built Niyama Life from a personal conviction that the diseases he spent his career trying to cure are largely preventable — and that the gap between knowing and doing is a behavioural economics problem, not an information problem.
+                            </p>
+                            <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', marginBottom: '20px' }}>
+                                He built the entire product — web app, mobile app, backend, and website — without a prior coding background. Niyama Life is live, incorporated, and generating real subscription revenue.
                             </p>
                             <a href="https://www.linkedin.com/in/sahil-inamdar" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#4A7A68', fontWeight: '600', textDecoration: 'none' }}>LinkedIn Profile →</a>
                         </div>
                     </div>
 
+                    {/* Get in touch */}
                     <div style={{ backgroundColor: '#1a2e28', borderRadius: '16px', padding: '48px', textAlign: 'center' }}>
                         <h2 style={{ fontSize: '28px', fontWeight: '700', color: 'white', marginBottom: '16px' }}>Get in touch</h2>
-                        <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', marginBottom: '24px', lineHeight: '1.7' }}>
-                            To discuss investment opportunities or request further information contact Sahil directly.
+                        <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', marginBottom: '32px', lineHeight: '1.7', maxWidth: '480px', margin: '0 auto 32px' }}>
+                            To discuss investment opportunities or request a pitch deck, contact Sahil directly.
                         </p>
-                        <a href="mailto:sahil.inamdar@gmail.com" style={{ display: 'inline-block', backgroundColor: '#C96A52', color: 'white', fontWeight: '700', fontSize: '16px', padding: '14px 36px', borderRadius: '30px', textDecoration: 'none', marginBottom: '16px' }}>
-                            sahil.inamdar@gmail.com
+                        <a href="mailto:sahil.inamdar@niyamalife.com" style={{ display: 'inline-block', backgroundColor: '#C96A52', color: 'white', fontWeight: '700', fontSize: '16px', padding: '14px 36px', borderRadius: '30px', textDecoration: 'none', marginBottom: '20px' }}>
+                            sahil.inamdar@niyamalife.com
                         </a>
                         <br />
                         <a href="https://www.linkedin.com/in/sahil-inamdar" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>
-                            LinkedIn: linkedin.com/in/sahil-inamdar
+                            linkedin.com/in/sahil-inamdar
                         </a>
                     </div>
 
