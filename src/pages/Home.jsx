@@ -22,7 +22,7 @@ export default function Home() {
                 textAlign: 'center',
             }}>
                 <div style={{ maxWidth: '720px' }}>
-                    <img src="/niyama-icon-nobg.svg" alt="Niyama Life" style={{ height: '72px', width: 'auto', marginBottom: '32px' }} />
+                    <img src="/niyama-icon-nobg.svg" alt="Niyama Life" style={{ height: '72px', width: 'auto', display: 'block', margin: '0 auto 32px' }} />
                     <div style={{
                         display: 'inline-block',
                         backgroundColor: '#e8f2ee',
