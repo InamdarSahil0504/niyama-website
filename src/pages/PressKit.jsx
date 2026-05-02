@@ -66,7 +66,7 @@ export default function PressKit() {
                         ].map(function (variant) {
                             return (
                                 <div key={variant.label} style={{ backgroundColor: variant.bg, borderRadius: '16px', padding: '48px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '12px', border: variant.border ? '1px solid #d8e8e2' : 'none' }}>
-                                    <span style={{ fontSize: '48px' }}>🌿</span>
+                                    <img src="/niyama-icon.svg" alt="Niyama Life" style={{ height: '80px', width: 'auto' }} />
                                     <span style={{ fontWeight: '700', fontSize: '20px', color: variant.text }}>Niyama Life</span>
                                     <span style={{ fontSize: '12px', color: variant.text, opacity: 0.6 }}>{variant.label}</span>
                                 </div>

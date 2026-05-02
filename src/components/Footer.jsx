@@ -8,10 +8,9 @@ export default function Footer() {
             <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '48px', marginBottom: '64px' }}>
                     <div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                            <span style={{ fontSize: '24px' }}>🌿</span>
-                            <span style={{ fontWeight: '700', fontSize: '20px', color: 'white' }}>Niyama Life</span>
-                        </div>
+                        <a href="/" style={{ display: 'inline-block', marginBottom: '16px', textDecoration: 'none' }}>
+                            <img src="/niyama-wordmark-dark.svg" alt="Niyama Life" style={{ height: '32px', width: 'auto' }} />
+                        </a>
                         <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: '8px', fontWeight: '600' }}>
                             Real change. Real rewards.
                         </p>

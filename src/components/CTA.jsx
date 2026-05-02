@@ -7,7 +7,7 @@ export default function CTA() {
     return (
         <section style={{ padding: '100px 24px', backgroundColor: '#4A7A68' }}>
             <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-                <div style={{ fontSize: '48px', marginBottom: '24px' }}>🌿</div>
+                <img src="/niyama-icon-nobg.svg" alt="Niyama Life" style={{ height: '64px', width: 'auto', marginBottom: '24px' }} />
                 <h2 style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: '700', color: 'white', marginBottom: '16px', lineHeight: '1.2', letterSpacing: '-0.5px' }}>
                     Your habits are worth something.
                 </h2>
