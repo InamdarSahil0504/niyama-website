@@ -36,7 +36,7 @@ export default function About() {
                         </div>
                         <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
                             <div style={{ fontSize: '48px', marginBottom: '16px' }}>🌿</div>
-                            <p style={{ fontSize: '28px', fontWeight: '700', color: '#5A8A78', marginBottom: '8px', fontStyle: 'italic' }}>Niyama</p>
+                            <p style={{ fontSize: '28px', fontWeight: '700', color: '#4A7A68', marginBottom: '8px', fontStyle: 'italic' }}>Niyama</p>
                             <p style={{ fontSize: '14px', color: '#7a9990', marginBottom: '4px' }}>Nee-yah-ma</p>
                             <p style={{ fontSize: '14px', color: '#4a6b62', lineHeight: '1.6' }}>Personal observance · Self-discipline · Inner commitment</p>
                         </div>
@@ -52,7 +52,7 @@ export default function About() {
                         <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', marginBottom: '16px' }}>
                             The problem is not knowledge. Most people know they should sleep earlier, move more, and put their phone down. The gap between knowing something and doing it every single day is not an information problem. It is a behavioural economics problem.
                         </p>
-                        <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', fontStyle: 'italic', borderLeft: '3px solid #D4735F', paddingLeft: '16px' }}>
+                        <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', fontStyle: 'italic', borderLeft: '3px solid #C96A52', paddingLeft: '16px' }}>
                             We live in a world where bad decisions are free and good decisions require daily effort. Niyama inverts that.
                         </p>
                     </div>
