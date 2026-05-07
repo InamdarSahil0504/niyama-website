@@ -200,7 +200,7 @@ function InvestorContent() {
             {/* Hero */}
             <section style={{ padding: '100px 24px', backgroundColor: '#1a2e28', textAlign: 'center' }}>
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                    <img src="/niyama-wordmark-dark.svg" alt="Niyama Life" style={{ height: '40px', width: 'auto', display: 'block', margin: '0 auto 32px' }} />
+                    <img src="/niyama-icon-nobg.svg" alt="Niyama Life" style={{ height: '56px', width: 'auto', display: 'block', margin: '0 auto 32px' }} />
                     <div style={{ display: 'inline-block', backgroundColor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.7)', fontSize: '13px', fontWeight: '600', padding: '6px 16px', borderRadius: '20px', marginBottom: '24px' }}>
                         Investor Overview · Confidential · May 2026
                     </div>
@@ -414,7 +414,7 @@ function InvestorContent() {
 
                     {/* Get in touch */}
                     <div style={{ backgroundColor: '#1a2e28', borderRadius: '16px', padding: '48px', textAlign: 'center' }}>
-                        <img src="/niyama-wordmark-dark.svg" alt="Niyama Life" style={{ height: '32px', width: 'auto', display: 'block', margin: '0 auto 24px' }} />
+                        <img src="/niyama-icon-nobg.svg" alt="Niyama Life" style={{ height: '48px', width: 'auto', display: 'block', margin: '0 auto 24px' }} />
                         <h2 style={{ fontSize: '28px', fontWeight: '700', color: 'white', marginBottom: '16px' }}>Get in touch</h2>
                         <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', marginBottom: '32px', lineHeight: '1.7', maxWidth: '480px', margin: '0 auto 32px' }}>
                             To discuss investment opportunities or request a pitch deck, contact Sahil directly.
