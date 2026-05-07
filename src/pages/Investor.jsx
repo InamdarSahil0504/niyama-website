@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const INVESTOR_PASSWORD = 'NiyamaLife2026'
 
@@ -22,7 +22,7 @@ export default function Investor() {
             <main style={{ paddingTop: '64px' }}>
                 <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px', backgroundColor: '#F4F7F5' }}>
                     <div style={{ maxWidth: '440px', width: '100%', textAlign: 'center' }}>
-                        <div style={{ fontSize: '40px', marginBottom: '16px' }}>🌿</div>
+                        <img src="/niyama-icon.svg" alt="Niyama Life" style={{ height: '72px', width: 'auto', display: 'block', margin: '0 auto 24px', borderRadius: '18px' }} />
                         <h1 style={{ fontSize: '28px', fontWeight: '700', color: '#1a2e28', marginBottom: '8px' }}>Investor Access</h1>
                         <p style={{ fontSize: '15px', color: '#4a6b62', marginBottom: '40px', lineHeight: '1.7' }}>
                             This page is private. Enter the access code to continue. To request access contact info@niyamalife.com
@@ -48,14 +48,133 @@ export default function Investor() {
         )
     }
 
+    return <InvestorContent />
+}
+
+function LiveMetrics() {
+    const [metrics, setMetrics] = useState(null)
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        fetch('https://jzbqicxycryebennqyhe.supabase.co/functions/v1/investor-metrics', {
+            headers: {
+                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6YnFpY3h5Y3J5ZWJlbm5xeWhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMzQ1NTAsImV4cCI6MjA4OTcxMDU1MH0.3ydrT70qUl2HWwirNMlaXfN5AAfRkKKuKkUvCBaiPcQ',
+            }
+        })
+            .then(r => r.json())
+            .then(data => { setMetrics(data); setLoading(false) })
+            .catch(() => setLoading(false))
+    }, [])
+
+    const items = [
+        { label: 'Habits completed', value: loading ? '...' : metrics?.habits_completed?.toLocaleString() ?? '—', sub: 'all time' },
+        { label: 'Days tracked', value: loading ? '...' : metrics?.days_tracked?.toLocaleString() ?? '—', sub: 'submitted days' },
+        { label: 'Avg completion rate', value: loading ? '...' : metrics?.avg_completion_rate ? `${metrics.avg_completion_rate}%` : '—', sub: 'per submitted day' },
+    ]
+
+    return (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+            {items.map(function (item) {
+                return (
+                    <div key={item.label} style={{ backgroundColor: '#e8f5f0', borderRadius: '16px', padding: '32px 24px', textAlign: 'center', border: '1px solid #c8e8d8' }}>
+                        <div style={{ fontSize: '40px', fontWeight: '700', color: '#4A7A68', marginBottom: '6px', lineHeight: 1 }}>{item.value}</div>
+                        <div style={{ fontSize: '14px', fontWeight: '600', color: '#1a2e28', marginBottom: '4px' }}>{item.label}</div>
+                        <div style={{ fontSize: '12px', color: '#7a9990' }}>{item.sub}</div>
+                    </div>
+                )
+            })}
+        </div>
+    )
+}
+
+function BusinessModel() {
+    const [market, setMarket] = useState('usa')
+
+    const usaTiers = [
+        { tier: 'Free', price: '$0', annual: '—', maxReward: '$2.50/mo', note: 'First 3 months only', highlight: false },
+        { tier: 'Basic', price: '$0.99/mo', annual: '$9.99/yr', maxReward: '$5.00/mo', note: 'Flat cap', highlight: false },
+        { tier: 'Plus', price: '$4.99/mo', annual: '$49.99/yr', maxReward: '$17.50/mo', note: 'Milestone-gated', highlight: true },
+        { tier: 'Premium', price: '$14.99/mo', annual: '$149.99/yr', maxReward: '$45.00/mo', note: 'Milestone-gated', highlight: false },
+    ]
+
+    const indiaTiers = [
+        { tier: 'Free', price: '₹0', annual: '—', maxReward: '₹30/mo', note: 'First 3 months only', highlight: false },
+        { tier: 'Basic', price: '₹49/mo', annual: '₹499/yr', maxReward: '₹100/mo', note: 'Flat cap', highlight: false },
+        { tier: 'Plus', price: '₹249/mo', annual: '₹2,499/yr', maxReward: '₹750/mo', note: 'Milestone-gated', highlight: true },
+        { tier: 'Premium', price: '₹499/mo', annual: '₹4,999/yr', maxReward: '₹2,000/mo', note: 'Milestone-gated', highlight: false },
+    ]
+
+    const tiers = market === 'usa' ? usaTiers : indiaTiers
+
+    return (
+        <div style={{ marginBottom: '80px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Business model</h2>
+
+            {/* Market toggle */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: '#f0f7f4', borderRadius: '50px', padding: '4px', marginBottom: '24px' }}>
+                <button onClick={() => setMarket('usa')} style={{ padding: '8px 24px', borderRadius: '50px', border: 'none', cursor: 'pointer', fontSize: '14px', fontWeight: '600', backgroundColor: market === 'usa' ? '#4A7A68' : 'transparent', color: market === 'usa' ? 'white' : '#4a6b62', transition: 'all 0.2s', fontFamily: 'inherit' }}>
+                    🇺🇸 USA
+                </button>
+                <button onClick={() => setMarket('india')} style={{ padding: '8px 24px', borderRadius: '50px', border: 'none', cursor: 'pointer', fontSize: '14px', fontWeight: '600', backgroundColor: market === 'india' ? '#4A7A68' : 'transparent', color: market === 'india' ? 'white' : '#4a6b62', transition: 'all 0.2s', fontFamily: 'inherit' }}>
+                    🇮🇳 India
+                </button>
+            </div>
+
+            <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2', marginBottom: '24px' }}>
+                {market === 'usa' ? (
+                    <>
+                        <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', marginBottom: '16px' }}>
+                            Revenue is generated through monthly and annual subscriptions across four tiers. The model works because average reward payouts are significantly below the tier cap — most users will not achieve maximum milestone rewards every month.
+                        </p>
+                        <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', marginBottom: '16px' }}>
+                            Rewards are progressive — base cap plus milestone bonuses that unlock only when users hit 10-day, 20-day, successful month, and perfect month thresholds. Reward costs scale with the most engaged users, who also have the highest retention and LTV.
+                        </p>
+                        <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', margin: 0 }}>
+                            All subscriptions are web-based — users subscribe at niyamalife.com/pricing, bypassing Apple's 30% and Google's 15% commission entirely. Payments via Stripe. Rewards delivered as gift cards via Tremendous.
+                        </p>
+                    </>
+                ) : (
+                    <>
+                        <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', marginBottom: '16px' }}>
+                            India is Niyama Life's second market — planned post-seed. The Indian wellness and digital health market represents a generational opportunity, with over 500 million smartphone users and rapidly growing health consciousness.
+                        </p>
+                        <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', marginBottom: '16px' }}>
+                            India pricing is structured in INR at a fraction of USA pricing — making Niyama Life accessible to India's massive middle class. Payments via Razorpay. Rewards delivered locally.
+                        </p>
+                        <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', margin: 0 }}>
+                            India operations will be incorporated as <strong>Niyama Life Private Limited</strong> — a separate Indian subsidiary — post-seed. This ensures DPDPA 2023 compliance, local data residency, and the ability to accept Indian investment.
+                        </p>
+                    </>
+                )}
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '16px' }}>
+                {tiers.map(function (t) {
+                    return (
+                        <div key={t.tier} style={{ backgroundColor: t.highlight ? '#e8f5f0' : 'white', borderRadius: '12px', padding: '20px', border: t.highlight ? '2px solid #4A7A68' : '1px solid #d8e8e2' }}>
+                            <div style={{ fontSize: '15px', fontWeight: '700', color: '#1a2e28', marginBottom: '10px' }}>{t.tier}</div>
+                            <div style={{ fontSize: '13px', color: '#4a6b62', marginBottom: '4px' }}>Monthly: <strong>{t.price}</strong></div>
+                            <div style={{ fontSize: '13px', color: '#4a6b62', marginBottom: '4px' }}>Annual: <strong>{t.annual}</strong></div>
+                            <div style={{ fontSize: '13px', color: '#4a6b62', marginBottom: '4px' }}>Max reward: <strong>{t.maxReward}</strong></div>
+                            <div style={{ fontSize: '11px', color: '#7a9990', marginTop: '6px' }}>{t.note}</div>
+                        </div>
+                    )
+                })}
+            </div>
+        </div>
+    )
+}
+
+function InvestorContent() {
     const traction = [
-        { stat: 'Live', label: 'Web app at app.niyamalife.com — fully functional' },
-        { stat: 'Live', label: 'Website at niyamalife.com — full 10-page site' },
+        { stat: 'Live', label: 'Web app — app.niyamalife.com, fully functional' },
+        { stat: 'Live', label: 'Website — www.niyamalife.com, 10 pages' },
         { stat: 'Live', label: 'Stripe subscriptions — all 4 tiers, monthly + annual' },
-        { stat: 'Built', label: 'React Native mobile app — all 5 tabs complete' },
-        { stat: 'Live', label: 'PostHog + Mixpanel — analytics wired across all events' },
+        { stat: 'Live', label: 'First paying subscriber — $4.99/month' },
         { stat: 'Live', label: 'Delaware C-Corp incorporated — EIN 42-2077253' },
-        { stat: 'Approved', label: 'Tremendous — gift card reward delivery approved' },
+        { stat: 'Live', label: 'PostHog + Mixpanel — analytics wired across all events' },
+        { stat: 'Live', label: 'Tremendous — gift card reward delivery integrated' },
+        { stat: 'Built', label: 'React Native mobile app — all 5 tabs complete' },
         { stat: 'Pending', label: 'App Store + Google Play — blocked on Apple Developer D-U-N-S' },
     ]
 
@@ -70,8 +189,9 @@ export default function Investor() {
                 'Marketing website — 10 pages, full brand identity, Stripe checkout',
                 'React Native mobile app — 5 tabs, onboarding, mood tracking, analytics, UI polish',
                 'Delaware C-Corp incorporation — EIN issued, 83(b) filed',
-                'Tremendous gift card rewards — production account approved',
+                'Tremendous gift card rewards — production account approved and integrated',
                 'PostHog + Mixpanel analytics — wired across all platforms',
+                'First paying subscriber acquired',
             ]
         },
         {
@@ -104,25 +224,26 @@ export default function Investor() {
             bg: '#F4F7F5',
             border: '#d8e8e2',
             items: [
-                'India market — Razorpay, INR rewards, DPDPA compliance, local entity',
+                'India market launch — Niyama Life Private Limited incorporated as Indian subsidiary',
+                'Razorpay payments, INR rewards, DPDPA 2023 compliance, local data residency',
                 'AI midday nudge — Claude API personalised habit coaching at noon',
                 'Social sharing with branded achievement cards',
                 'Referral system — growth loop with reward bonuses',
-                'Seed round — marketing, full-time founder salary, India expansion',
+                'Seed round — marketing, full-time founder salary, India expansion, first hire',
             ]
         },
     ]
 
     return (
         <main style={{ paddingTop: '64px' }}>
+
+            {/* Hero */}
             <section style={{ padding: '100px 24px', backgroundColor: '#1a2e28', textAlign: 'center' }}>
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <img src="/niyama-wordmark-dark.svg" alt="Niyama Life" style={{ height: '40px', width: 'auto', display: 'block', margin: '0 auto 32px' }} />
                     <div style={{ display: 'inline-block', backgroundColor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.7)', fontSize: '13px', fontWeight: '600', padding: '6px 16px', borderRadius: '20px', marginBottom: '24px' }}>
                         Investor Overview · Confidential · May 2026
                     </div>
-                    <h1 style={{ fontSize: 'clamp(36px, 6vw, 64px)', fontWeight: '700', color: 'white', lineHeight: '1.15', marginBottom: '24px', letterSpacing: '-1px' }}>
-                        Niyama Life
-                    </h1>
                     <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.7)', lineHeight: '1.7', maxWidth: '600px', margin: '0 auto 16px' }}>
                         Science-backed. Reward-driven.
                     </p>
@@ -135,17 +256,63 @@ export default function Investor() {
             <section style={{ padding: '80px 24px', backgroundColor: 'white' }}>
                 <div style={{ maxWidth: '900px', margin: '0 auto' }}>
 
-                    {/* One-line pitch */}
+                    {/* The pitch */}
                     <div style={{ marginBottom: '80px' }}>
-                        <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The one-line pitch</h2>
+                        <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The pitch</h2>
                         <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2' }}>
-                            <p style={{ fontSize: '20px', fontWeight: '600', color: '#1a2e28', lineHeight: '1.6', margin: 0 }}>
-                                Niyama Life is a subscription behaviour change platform that rewards users financially for completing 9 science-backed daily habits — making daily discipline the most financially rational choice.
+                            <p style={{ fontSize: '22px', fontWeight: '600', color: '#1a2e28', lineHeight: '1.7', margin: 0 }}>
+                                Most people know what healthy habits look like. Nobody does them consistently because skipping costs nothing. Niyama Life changes that — real financial rewards for real daily discipline.
                             </p>
                         </div>
                     </div>
 
-                    {/* Problem */}
+                    {/* Why this founder */}
+                    <div style={{ marginBottom: '80px' }}>
+                        <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Why this founder</h2>
+                        <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                                <div style={{ width: '64px', height: '64px', borderRadius: '50%', backgroundColor: '#4A7A68', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', fontWeight: '700', color: 'white', flexShrink: 0 }}>S</div>
+                                <div>
+                                    <div style={{ fontSize: '18px', fontWeight: '700', color: '#1a2e28' }}>Sahil Inamdar</div>
+                                    <div style={{ fontSize: '13px', color: '#7a9990' }}>Founder & CEO · Niyama Life, Inc.</div>
+                                </div>
+                            </div>
+
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px', marginBottom: '28px' }}>
+                                {[
+                                    { stat: 'PhD', label: 'Chemical Engineering, ASU' },
+                                    { stat: '700+', label: 'Research citations' },
+                                    { stat: '20+', label: 'Peer-reviewed publications' },
+                                    { stat: 'H-index 15', label: 'Research impact' },
+                                ].map(function (cred) {
+                                    return (
+                                        <div key={cred.stat} style={{ backgroundColor: 'white', borderRadius: '10px', padding: '16px', textAlign: 'center', border: '1px solid #d8e8e2' }}>
+                                            <div style={{ fontSize: '20px', fontWeight: '700', color: '#4A7A68', marginBottom: '2px' }}>{cred.stat}</div>
+                                            <div style={{ fontSize: '11px', color: '#4a6b62' }}>{cred.label}</div>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px' }}>
+                                {[
+                                    'Spent years in the lab working on cancer immunotherapy, Alzheimer\'s, Parkinson\'s, and traumatic brain injury — understanding at a molecular level how preventable most chronic disease is.',
+                                    'Built the entire product — web app, React Native mobile app, Supabase backend, and marketing website — without a prior coding background. Product is live, incorporated, and generating real subscription revenue.',
+                                    'The gap between knowing what to do and doing it every day is not an information problem. It is a behavioural economics problem. Sahil is the only founder who has spent years on both sides of that equation — in the lab studying the diseases, and building the behavioural system to prevent them.',
+                                ].map(function (point, i) {
+                                    return (
+                                        <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                                            <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#4A7A68', flexShrink: 0, marginTop: '6px' }}></div>
+                                            <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.7', margin: 0 }}>{point}</p>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                            <a href="https://www.linkedin.com/in/sahil-inamdar" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#4A7A68', fontWeight: '600', textDecoration: 'none' }}>LinkedIn Profile →</a>
+                        </div>
+                    </div>
+
+                    {/* The problem */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The problem</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -165,7 +332,7 @@ export default function Investor() {
                         </div>
                     </div>
 
-                    {/* Solution */}
+                    {/* The solution */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The solution</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -184,6 +351,35 @@ export default function Investor() {
                             })}
                         </div>
                     </div>
+
+                    {/* Traction */}
+                    <div style={{ marginBottom: '80px' }}>
+                        <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Traction — May 2026</h2>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
+                            {traction.map(function (item) {
+                                const isLive = item.stat === 'Live'
+                                const isBuilt = item.stat === 'Built'
+                                const bgColor = isLive ? '#e8f5f0' : isBuilt ? '#e8f5f0' : '#F4F7F5'
+                                const statColor = isLive || isBuilt ? '#4A7A68' : '#7a9990'
+                                return (
+                                    <div key={item.label} style={{ backgroundColor: bgColor, borderRadius: '12px', padding: '20px', border: '1px solid #d8e8e2' }}>
+                                        <div style={{ fontSize: '11px', fontWeight: '700', color: statColor, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '6px' }}>{item.stat}</div>
+                                        <div style={{ fontSize: '13px', color: '#4a6b62', lineHeight: '1.5' }}>{item.label}</div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+
+                    {/* Live metrics */}
+                    <div style={{ marginBottom: '80px' }}>
+                        <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '8px' }}>Live metrics</h2>
+                        <p style={{ fontSize: '15px', color: '#7a9990', marginBottom: '24px' }}>Real-time data pulled from Supabase — updated on every page load.</p>
+                        <LiveMetrics />
+                    </div>
+
+                    {/* Business model with toggle */}
+                    <BusinessModel />
 
                     {/* Why now */}
                     <div style={{ marginBottom: '80px' }}>
@@ -220,59 +416,6 @@ export default function Investor() {
                                         <div style={{ fontSize: '32px', fontWeight: '700', color: '#4A7A68', marginBottom: '4px' }}>{item.stat}</div>
                                         <div style={{ fontSize: '13px', color: '#1a2e28', fontWeight: '600', marginBottom: '4px' }}>{item.label}</div>
                                         <div style={{ fontSize: '11px', color: '#7a9990', fontStyle: 'italic' }}>{item.source}</div>
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </div>
-
-                    {/* Business model */}
-                    <div style={{ marginBottom: '80px' }}>
-                        <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Business model</h2>
-                        <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2', marginBottom: '24px' }}>
-                            <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', marginBottom: '16px' }}>
-                                Revenue is generated through monthly and annual subscriptions across four tiers — Free ($0), Basic ($0.99/mo or $9.99/yr), Plus ($4.99/mo or $49.99/yr), and Premium ($14.99/mo or $149.99/yr). The model works because average reward payouts are significantly below the tier cap — most users will not achieve maximum milestone rewards every month.
-                            </p>
-                            <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', marginBottom: '16px' }}>
-                                Rewards are progressive — base cap plus milestone bonuses that unlock only when users hit 10-day, 20-day, successful month, and perfect month thresholds. This means reward costs scale with the most engaged users, who also have the highest retention and LTV.
-                            </p>
-                            <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', margin: 0 }}>
-                                All subscriptions are web-based — users subscribe at niyamalife.com/pricing, bypassing Apple's 30% and Google's 15% commission entirely. India pricing is structured separately in INR, planned post-seed.
-                            </p>
-                        </div>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
-                            {[
-                                { tier: 'Basic', price: '$0.99/mo', annual: '$9.99/yr', maxReward: '$5.00/mo', note: 'Flat cap' },
-                                { tier: 'Plus', price: '$4.99/mo', annual: '$49.99/yr', maxReward: '$17.50/mo', note: 'Milestone-gated' },
-                                { tier: 'Premium', price: '$14.99/mo', annual: '$149.99/yr', maxReward: '$45.00/mo', note: 'Milestone-gated' },
-                            ].map(function (t) {
-                                return (
-                                    <div key={t.tier} style={{ backgroundColor: 'white', borderRadius: '12px', padding: '20px', border: '1px solid #d8e8e2' }}>
-                                        <div style={{ fontSize: '15px', fontWeight: '700', color: '#1a2e28', marginBottom: '10px' }}>{t.tier}</div>
-                                        <div style={{ fontSize: '13px', color: '#4a6b62', marginBottom: '4px' }}>Monthly: <strong>{t.price}</strong></div>
-                                        <div style={{ fontSize: '13px', color: '#4a6b62', marginBottom: '4px' }}>Annual: <strong>{t.annual}</strong></div>
-                                        <div style={{ fontSize: '13px', color: '#4a6b62', marginBottom: '4px' }}>Max reward: <strong>{t.maxReward}</strong></div>
-                                        <div style={{ fontSize: '11px', color: '#7a9990', marginTop: '6px' }}>{t.note}</div>
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </div>
-
-                    {/* Traction */}
-                    <div style={{ marginBottom: '80px' }}>
-                        <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Traction — May 2026</h2>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
-                            {traction.map(function (item) {
-                                const isLive = item.stat === 'Live'
-                                const isBuilt = item.stat === 'Built'
-                                const isApproved = item.stat === 'Approved'
-                                const bgColor = isLive ? '#e8f5f0' : isBuilt ? '#e8f5f0' : isApproved ? '#fff8e6' : '#F4F7F5'
-                                const statColor = isLive || isBuilt ? '#4A7A68' : isApproved ? '#C9973A' : '#7a9990'
-                                return (
-                                    <div key={item.label} style={{ backgroundColor: bgColor, borderRadius: '12px', padding: '20px', border: '1px solid #d8e8e2' }}>
-                                        <div style={{ fontSize: '12px', fontWeight: '700', color: statColor, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '6px' }}>{item.stat}</div>
-                                        <div style={{ fontSize: '13px', color: '#4a6b62', lineHeight: '1.5' }}>{item.label}</div>
                                     </div>
                                 )
                             })}
@@ -317,44 +460,9 @@ export default function Investor() {
                         </div>
                     </div>
 
-                    {/* Founder */}
-                    <div style={{ marginBottom: '80px' }}>
-                        <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The founder</h2>
-                        <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-                                <div style={{ width: '64px', height: '64px', borderRadius: '50%', backgroundColor: '#4A7A68', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', fontWeight: '700', color: 'white', flexShrink: 0 }}>S</div>
-                                <div>
-                                    <div style={{ fontSize: '18px', fontWeight: '700', color: '#1a2e28' }}>Sahil Inamdar</div>
-                                    <div style={{ fontSize: '13px', color: '#7a9990' }}>Founder & CEO · Niyama Life, Inc.</div>
-                                </div>
-                            </div>
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px', marginBottom: '24px' }}>
-                                {[
-                                    { stat: 'PhD', label: 'Chemical Engineering, ASU' },
-                                    { stat: '700+', label: 'Research citations' },
-                                    { stat: '20+', label: 'Peer-reviewed publications' },
-                                    { stat: 'H-index 15', label: 'Research impact' },
-                                ].map(function (cred) {
-                                    return (
-                                        <div key={cred.stat} style={{ backgroundColor: 'white', borderRadius: '10px', padding: '16px', textAlign: 'center', border: '1px solid #d8e8e2' }}>
-                                            <div style={{ fontSize: '18px', fontWeight: '700', color: '#4A7A68', marginBottom: '2px' }}>{cred.stat}</div>
-                                            <div style={{ fontSize: '11px', color: '#4a6b62' }}>{cred.label}</div>
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                            <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', marginBottom: '16px' }}>
-                                Sahil spent years working on cancer immunotherapy and neurodegenerative diseases including Alzheimer's, Parkinson's, and traumatic brain injury. He built Niyama Life from a personal conviction that the diseases he spent his career trying to cure are largely preventable — and that the gap between knowing and doing is a behavioural economics problem, not an information problem.
-                            </p>
-                            <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', marginBottom: '20px' }}>
-                                He built the entire product — web app, mobile app, backend, and website — without a prior coding background. Niyama Life is live, incorporated, and generating real subscription revenue.
-                            </p>
-                            <a href="https://www.linkedin.com/in/sahil-inamdar" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#4A7A68', fontWeight: '600', textDecoration: 'none' }}>LinkedIn Profile →</a>
-                        </div>
-                    </div>
-
                     {/* Get in touch */}
                     <div style={{ backgroundColor: '#1a2e28', borderRadius: '16px', padding: '48px', textAlign: 'center' }}>
+                        <img src="/niyama-wordmark-dark.svg" alt="Niyama Life" style={{ height: '32px', width: 'auto', display: 'block', margin: '0 auto 24px' }} />
                         <h2 style={{ fontSize: '28px', fontWeight: '700', color: 'white', marginBottom: '16px' }}>Get in touch</h2>
                         <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', marginBottom: '32px', lineHeight: '1.7', maxWidth: '480px', margin: '0 auto 32px' }}>
                             To discuss investment opportunities or request a pitch deck, contact Sahil directly.
