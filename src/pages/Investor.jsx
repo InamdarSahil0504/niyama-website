@@ -51,46 +51,6 @@ export default function Investor() {
     return <InvestorContent />
 }
 
-function LiveMetrics() {
-    const [metrics, setMetrics] = useState(null)
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        fetch('https://jzbqicxycryebennqyhe.supabase.co/functions/v1/investor-metrics', {
-            headers: {
-                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6YnFpY3h5Y3J5ZWJlbm5xeWhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMzQ1NTAsImV4cCI6MjA4OTcxMDU1MH0.3ydrT70qUl2HWwirNMlaXfN5AAfRkKKuKkUvCBaiPcQ',
-            }
-        })
-            .then(r => r.json())
-            .then(data => { setMetrics(data); setLoading(false) })
-            .catch(() => setLoading(false))
-    }, [])
-
-    const items = [
-        { label: 'Habits completed', value: loading ? '...' : metrics?.habits_completed?.toLocaleString() ?? '—', sub: 'all time' },
-        { label: 'Days tracked', value: loading ? '...' : metrics?.days_tracked?.toLocaleString() ?? '—', sub: 'submitted days' },
-        { label: 'Avg completion rate', value: loading ? '...' : metrics?.avg_completion_rate ? `${metrics.avg_completion_rate}%` : '—', sub: 'per submitted day' },
-    ]
-
-    return (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
-            {items.map(function (item) {
-                return (
-                    <div key={item.label} style={{ backgroundColor: '#e8f5f0', borderRadius: '16px', padding: '32px 24px', textAlign: 'center', border: '1px solid #c8e8d8' }}>
-                        <div style={{ fontSize: '40px', fontWeight: '700', color: '#4A7A68', marginBottom: '6px', lineHeight: 1 }}>{item.value}</div>
-                        <div style={{ fontSize: '14px', fontWeight: '600', color: '#1a2e28', marginBottom: '4px' }}>{item.label}</div>
-                        <div style={{ fontSize: '12px', color: '#7a9990' }}>{item.sub}</div>
-                    </div>
-                )
-            })}
-        </div>
-    )
-}
-
-function BusinessModel() {
-    const [market, setMarket] = useState('usa')
-
-    const usaTiers = [
         { tier: 'Free', price: '$0', annual: '—', maxReward: '$2.50/mo', note: 'First 3 months only', highlight: false },
         { tier: 'Basic', price: '$0.99/mo', annual: '$9.99/yr', maxReward: '$5.00/mo', note: 'Flat cap', highlight: false },
         { tier: 'Plus', price: '$4.99/mo', annual: '$49.99/yr', maxReward: '$17.50/mo', note: 'Milestone-gated', highlight: true },
@@ -370,14 +330,6 @@ function InvestorContent() {
                             })}
                         </div>
                     </div>
-
-                    {/* Live metrics */}
-                    <div style={{ marginBottom: '80px' }}>
-                        <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '8px' }}>Live metrics</h2>
-                        <p style={{ fontSize: '15px', color: '#7a9990', marginBottom: '24px' }}>Real-time data pulled from Supabase — updated on every page load.</p>
-                        <LiveMetrics />
-                    </div>
-
                     {/* Business model with toggle */}
                     <BusinessModel />
 
