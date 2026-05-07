@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 const INVESTOR_PASSWORD = 'NiyamaLife2026'
 
@@ -51,6 +51,10 @@ export default function Investor() {
     return <InvestorContent />
 }
 
+function BusinessModel() {
+    const [market, setMarket] = useState('usa')
+
+    const usaTiers = [
         { tier: 'Free', price: '$0', annual: '—', maxReward: '$2.50/mo', note: 'First 3 months only', highlight: false },
         { tier: 'Basic', price: '$0.99/mo', annual: '$9.99/yr', maxReward: '$5.00/mo', note: 'Flat cap', highlight: false },
         { tier: 'Plus', price: '$4.99/mo', annual: '$49.99/yr', maxReward: '$17.50/mo', note: 'Milestone-gated', highlight: true },
@@ -70,7 +74,6 @@ export default function Investor() {
         <div style={{ marginBottom: '80px' }}>
             <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Business model</h2>
 
-            {/* Market toggle */}
             <div style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: '#f0f7f4', borderRadius: '50px', padding: '4px', marginBottom: '24px' }}>
                 <button onClick={() => setMarket('usa')} style={{ padding: '8px 24px', borderRadius: '50px', border: 'none', cursor: 'pointer', fontSize: '14px', fontWeight: '600', backgroundColor: market === 'usa' ? '#4A7A68' : 'transparent', color: market === 'usa' ? 'white' : '#4a6b62', transition: 'all 0.2s', fontFamily: 'inherit' }}>
                     🇺🇸 USA
@@ -90,7 +93,7 @@ export default function Investor() {
                             Rewards are progressive — base cap plus milestone bonuses that unlock only when users hit 10-day, 20-day, successful month, and perfect month thresholds. Reward costs scale with the most engaged users, who also have the highest retention and LTV.
                         </p>
                         <p style={{ fontSize: '15px', color: '#4a6b62', lineHeight: '1.8', margin: 0 }}>
-                            All subscriptions are web-based — users subscribe at niyamalife.com/pricing, bypassing Apple's 30% and Google's 15% commission entirely. Payments via Stripe. Rewards delivered as gift cards via Tremendous.
+                            All subscriptions are web-based — users subscribe at niyamalife.com/pricing, bypassing Apple's 30% and Google's 15% commission entirely. Payments via Stripe. Rewards delivered as gift cards via our rewards partner.
                         </p>
                     </>
                 ) : (
@@ -197,7 +200,6 @@ function InvestorContent() {
     return (
         <main style={{ paddingTop: '64px' }}>
 
-            {/* Hero */}
             <section style={{ padding: '100px 24px', backgroundColor: '#1a2e28', textAlign: 'center' }}>
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                     <img src="/niyama-icon-nobg.svg" alt="Niyama Life" style={{ height: '56px', width: 'auto', display: 'block', margin: '0 auto 32px' }} />
@@ -216,7 +218,6 @@ function InvestorContent() {
             <section style={{ padding: '80px 24px', backgroundColor: 'white' }}>
                 <div style={{ maxWidth: '900px', margin: '0 auto' }}>
 
-                    {/* The pitch */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The pitch</h2>
                         <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2' }}>
@@ -226,7 +227,6 @@ function InvestorContent() {
                         </div>
                     </div>
 
-                    {/* Why this founder */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Why this founder</h2>
                         <div style={{ backgroundColor: '#F4F7F5', borderRadius: '16px', padding: '32px', border: '1px solid #d8e8e2' }}>
@@ -237,7 +237,6 @@ function InvestorContent() {
                                     <div style={{ fontSize: '13px', color: '#7a9990' }}>Founder & CEO · Niyama Life, Inc.</div>
                                 </div>
                             </div>
-
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px', marginBottom: '28px' }}>
                                 {[
                                     { stat: 'PhD', label: 'Chemical Engineering, ASU' },
@@ -253,7 +252,6 @@ function InvestorContent() {
                                     )
                                 })}
                             </div>
-
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px' }}>
                                 {[
                                     'Spent years in the lab working on cancer immunotherapy, Alzheimer\'s, Parkinson\'s, and traumatic brain injury — understanding at a molecular level how preventable most chronic disease is.',
@@ -272,7 +270,6 @@ function InvestorContent() {
                         </div>
                     </div>
 
-                    {/* The problem */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The problem</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -292,7 +289,6 @@ function InvestorContent() {
                         </div>
                     </div>
 
-                    {/* The solution */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The solution</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -312,7 +308,6 @@ function InvestorContent() {
                         </div>
                     </div>
 
-                    {/* Traction */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Traction — May 2026</h2>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
@@ -330,10 +325,9 @@ function InvestorContent() {
                             })}
                         </div>
                     </div>
-                    {/* Business model with toggle */}
+
                     <BusinessModel />
 
-                    {/* Why now */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Why now</h2>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
@@ -353,7 +347,6 @@ function InvestorContent() {
                         </div>
                     </div>
 
-                    {/* Market size */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Market size</h2>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
@@ -374,7 +367,6 @@ function InvestorContent() {
                         </div>
                     </div>
 
-                    {/* Roadmap */}
                     <div style={{ marginBottom: '80px' }}>
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>Roadmap</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -397,7 +389,6 @@ function InvestorContent() {
                             })}
                         </div>
 
-                        {/* YC callout */}
                         <div style={{ backgroundColor: '#1a2e28', borderRadius: '16px', padding: '32px', marginTop: '24px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
                             <div style={{ flex: 1, minWidth: '200px' }}>
                                 <div style={{ fontSize: '12px', fontWeight: '700', color: '#C9973A', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>YC Summer 2026</div>
@@ -412,7 +403,6 @@ function InvestorContent() {
                         </div>
                     </div>
 
-                    {/* Get in touch */}
                     <div style={{ backgroundColor: '#1a2e28', borderRadius: '16px', padding: '48px', textAlign: 'center' }}>
                         <img src="/niyama-icon-nobg.svg" alt="Niyama Life" style={{ height: '48px', width: 'auto', display: 'block', margin: '0 auto 24px' }} />
                         <h2 style={{ fontSize: '28px', fontWeight: '700', color: 'white', marginBottom: '16px' }}>Get in touch</h2>
