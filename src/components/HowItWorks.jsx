@@ -3,13 +3,13 @@ export default function HowItWorks() {
         {
             number: '01',
             title: 'Science builds your habit framework',
-            description: 'Three core habits form your daily foundation — chosen because the evidence is overwhelming, not because they are trendy. Then you personalise: pick four more from a library of ten science-backed options. Plus and Premium subscribers can add their own custom habits on top.',
+            description: 'Three core habits form your daily foundation — chosen because the evidence is overwhelming. Seven additional science-backed library habits complete your framework automatically. Add unlimited personal habits on top.',
             color: '#4A7A68',
         },
         {
             number: '02',
             title: 'You show up daily',
-            description: 'Track your habits every day. A successful day means completing at least 5 of your 9 habits — with at least 2 being core habits. The app is built for real life, not perfection. Miss a day? Plus and Premium subscribers get one streak freeze per month.',
+            description: 'Track your habits every day. A successful day means completing at least 2 of 3 core habits AND at least 3 of 7 library habits. The app is built for real life, not perfection. Miss a day? Plus and Premium subscribers get one streak freeze per month.',
             color: '#4A7A68',
         },
         {
@@ -21,7 +21,7 @@ export default function HowItWorks() {
         {
             number: '04',
             title: 'Real rewards follow',
-            description: 'Your rewards convert to real gift cards every month via Tremendous — redeemable at hundreds of brands. Premium subscribers can unlock up to $45 per month. No gimmicks. No points that expire. Real financial rewards for real discipline.',
+            description: 'Your rewards convert to real gift cards every month via Tremendous — redeemable at hundreds of brands. Premium subscribers can unlock up to $35 per month. No gimmicks. No points that expire. Real financial rewards for real discipline.',
             color: '#C96A52',
         },
     ]

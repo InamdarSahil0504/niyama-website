@@ -10,13 +10,13 @@ export default function PointsRewards() {
             free:    { max: '$2.50',  sub: 'first 3 months only' },
             basic:   { max: '$5.00',  sub: 'per month' },
             plus:    { max: '$17.50', sub: 'per month with milestones' },
-            premium: { max: '$45.00', sub: 'per month with all milestones' },
+            premium: { max: '$35.00', sub: 'per month with all milestones' },
         },
         india: {
             free:    { max: '₹30',    sub: 'first 3 months only' },
             basic:   { max: '₹100',   sub: 'per month' },
-            plus:    { max: '₹750',   sub: 'per month with milestones' },
-            premium: { max: '₹2,000', sub: 'per month with all milestones' },
+            plus:    { max: '₹500',   sub: 'per month with milestones' },
+            premium: { max: '₹1,500', sub: 'per month with all milestones' },
         },
     }
 
@@ -75,15 +75,15 @@ export default function PointsRewards() {
                             Rewards grow with your consistency
                         </h3>
                         <p style={{ fontSize: '14px', color: '#4a6b62', marginBottom: '28px', lineHeight: '1.7' }}>
-                            Premium subscribers can unlock up to $45/month by hitting every milestone. Each one is additive — miss one, and you still keep everything you have already unlocked.
+                            Premium subscribers can unlock up to $35/month by hitting every milestone. Each one is additive — miss one, and you still keep everything you have already unlocked.
                         </p>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
                             {[
-                                { stage: 'Base',           reward: '$20.00', desc: 'Available from day 1',          color: '#4A7A68' },
+                                { stage: 'Base',           reward: '$25.00', desc: 'Available from day 1',          color: '#4A7A68' },
                                 { stage: '10-day bonus',   reward: '+$2.50', desc: 'Hit 10 successful days',        color: '#C9973A' },
                                 { stage: '20-day bonus',   reward: '+$5.00', desc: 'Hit 20 successful days',        color: '#C9973A' },
                                 { stage: 'Month bonus',    reward: '+$7.50', desc: 'Complete a successful month',   color: '#C9973A' },
-                                { stage: 'Perfect month',  reward: '+$7.50', desc: 'Every submitted day successful', color: '#C96A52' },
+                                { stage: 'Perfect month',  reward: '+$10.00', desc: 'Every submitted day successful', color: '#C96A52' },
                             ].map(function (m) {
                                 return (
                                     <div key={m.stage} style={{ backgroundColor: 'white', borderRadius: '12px', padding: '16px', border: '1px solid #c8e8d8' }}>
@@ -95,10 +95,13 @@ export default function PointsRewards() {
                             })}
                             <div style={{ backgroundColor: '#1a2e28', borderRadius: '12px', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                                 <div style={{ fontSize: '11px', color: '#7a9990', marginBottom: '4px' }}>Max total</div>
-                                <div style={{ fontSize: '20px', fontWeight: '700', color: 'white', marginBottom: '4px' }}>$45.00</div>
+                                <div style={{ fontSize: '20px', fontWeight: '700', color: 'white', marginBottom: '4px' }}>$35.00</div>
                                 <div style={{ fontSize: '11px', color: '#7a9990' }}>Premium · per month</div>
                             </div>
                         </div>
+                        <p style={{ fontSize: '13px', color: '#7a9990', marginTop: '16px', lineHeight: '1.6' }}>
+                            Plus subscribers unlock up to $17.50/mo — base $10.00 + milestones at 20 days and successful month.
+                        </p>
                     </div>
                 )}
 

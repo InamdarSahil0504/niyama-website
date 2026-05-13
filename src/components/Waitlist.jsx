@@ -12,12 +12,12 @@ export default function Waitlist() {
         if (!email) return
         setStatus('loading')
         try {
-            const response = await fetch('https://jzbqicxycryebennqyhe.supabase.co', {
+            const response = await fetch(import.meta.env.VITE_SUPABASE_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6YnFpY3h5Y3J5ZWJlbm5xeWhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMzQ1NTAsImV4cCI6MjA4OTcxMDU1MH0.3ydrT70qUl2HWwirNMlaXfN5AAfRkKKuKkUvCBaiPcQ',
-                    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6YnFpY3h5Y3J5ZWJlbm5xeWhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMzQ1NTAsImV4cCI6MjA4OTcxMDU1MH0.3ydrT70qUl2HWwirNMlaXfN5AAfRkKKuKkUvCBaiPcQ',
+                    'apikey': import.meta.env.VITE_SUPABASE_ANON_KEY,
+                    'Authorization': 'Bearer ' + import.meta.env.VITE_SUPABASE_ANON_KEY,
                     'Prefer': 'return=minimal',
                 },
                 body: JSON.stringify({ email: email, region: region }),

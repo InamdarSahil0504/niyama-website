@@ -2,7 +2,7 @@ export default function Habits() {
     const coreHabits = [
         {
             emoji: '🌅',
-            title: 'Wake before 7:30 AM',
+            title: 'Wake Consistency',
             science: 'Consistent wake time is the single most powerful regulator of your circadian rhythm — the biological clock governing cortisol, melatonin, metabolism, and cognitive performance. Irregular wake times are directly linked to increased risk of depression, metabolic syndrome, and cardiovascular disease.',
             researcher: 'Andrew Huberman, Stanford',
         },
@@ -21,19 +21,16 @@ export default function Habits() {
     ]
 
     const libraryRow1 = [
-        { emoji: '❤️', title: '30 min active heart rate' },
-        { emoji: '🧘', title: 'Mindfulness or meditation' },
-        { emoji: '💧', title: 'Daily hydration goal' },
-        { emoji: '📖', title: '20 min reading' },
-        { emoji: '🥗', title: 'No processed food' },
-        { emoji: '💪', title: 'Strength training' },
+        { emoji: '📵', title: 'Screen Time < 4 hours' },
+        { emoji: '🌙', title: 'No Phone after 10:30pm' },
+        { emoji: '🧍', title: 'Stand Consistency' },
+        { emoji: '☀️', title: 'Morning Sunlight (10+ min)' },
     ]
 
     const libraryRow2 = [
-        { emoji: '🌿', title: 'Time outdoors' },
-        { emoji: '✍️', title: 'Journalling' },
-        { emoji: '🚫', title: 'No alcohol' },
-        { emoji: '🛌', title: 'In bed by 10:30 PM' },
+        { emoji: '🍽️', title: 'No Late Food after 8pm' },
+        { emoji: '🧘', title: 'Recovery Practice' },
+        { emoji: '🧘‍♀️', title: 'Meditation (10+ min)' },
     ]
 
     const cardStyle = {
@@ -53,10 +50,10 @@ export default function Habits() {
                 {/* Header */}
                 <div style={{ textAlign: 'center', marginBottom: '64px' }}>
                     <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: '700', color: '#1a2e28', marginBottom: '16px' }}>
-                        9 habits. Your framework, your way.
+                        10 habits. Science-built. Personally yours.
                     </h2>
                     <p style={{ fontSize: '18px', color: '#4a6b62', maxWidth: '600px', margin: '0 auto' }}>
-                        Three core habits anchor your day. Then you personalise — choose four from a library of ten science-backed options. Complete at least 5 of 9 for a successful day.
+                        Three core habits anchor your day. Seven library habits complete your framework — all backed by the latest research. Add unlimited personal habits on top.
                     </p>
                 </div>
 
@@ -66,7 +63,7 @@ export default function Habits() {
                         <div style={{ backgroundColor: '#4A7A68', color: 'white', fontSize: '11px', fontWeight: '700', padding: '4px 14px', borderRadius: '20px', letterSpacing: '0.08em' }}>
                             CORE HABITS
                         </div>
-                        <span style={{ fontSize: '13px', color: '#7a9990' }}>Fixed for all users · 100 pts each · at least 2 required for a successful day</span>
+                        <span style={{ fontSize: '13px', color: '#7a9990' }}>Fixed for all users · 100 pts each · all 3 tracked daily · at least 2 required for a successful day</span>
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
@@ -94,11 +91,11 @@ export default function Habits() {
                         <div style={{ backgroundColor: '#C9973A', color: 'white', fontSize: '11px', fontWeight: '700', padding: '4px 14px', borderRadius: '20px', letterSpacing: '0.08em' }}>
                             LIBRARY HABITS
                         </div>
-                        <span style={{ fontSize: '13px', color: '#7a9990' }}>Pick 4 from 10 options · 50 pts each · swap monthly</span>
+                        <span style={{ fontSize: '13px', color: '#7a9990' }}>Fixed for all users · 50 pts each · all 7 tracked daily</span>
                     </div>
 
-                    {/* Row 1 — 6 items */}
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '12px', marginBottom: '12px' }}>
+                    {/* Row 1 — 4 items */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '12px' }}>
                         {libraryRow1.map(function (habit) {
                             return (
                                 <div key={habit.title} style={cardStyle}>
@@ -109,11 +106,11 @@ export default function Habits() {
                         })}
                     </div>
 
-                    {/* Row 2 — 4 items centred */}
+                    {/* Row 2 — 3 items centred */}
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '28px', flexWrap: 'wrap' }}>
                         {libraryRow2.map(function (habit) {
                             return (
-                                <div key={habit.title} style={{ ...cardStyle, width: 'calc(16.666% - 6px)', minWidth: '140px' }}>
+                                <div key={habit.title} style={{ ...cardStyle, width: 'calc(25% - 9px)', minWidth: '160px' }}>
                                     <span style={{ fontSize: '20px', flexShrink: 0 }}>{habit.emoji}</span>
                                     <span style={{ fontSize: '12px', fontWeight: '600', color: '#1a2e28', lineHeight: '1.3' }}>{habit.title}</span>
                                 </div>
@@ -126,7 +123,7 @@ export default function Habits() {
                         <div style={{ fontSize: '28px' }}>✏️</div>
                         <div>
                             <div style={{ fontSize: '14px', fontWeight: '700', color: '#1a2e28', marginBottom: '4px' }}>Custom habits</div>
-                            <div style={{ fontSize: '13px', color: '#4a6b62' }}>Plus subscribers can add 1 custom habit. Premium subscribers can add up to 3. Build the exact framework your life needs.</div>
+                            <div style={{ fontSize: '13px', color: '#4a6b62' }}>Plus subscribers can add up to 2 custom habits that earn 25pts each. Premium subscribers can add up to 4. Track unlimited habits on any tier — only Plus and Premium earn points on custom habits.</div>
                         </div>
                         <div style={{ marginLeft: 'auto', backgroundColor: '#f0f7f4', borderRadius: '20px', padding: '4px 14px', fontSize: '11px', fontWeight: '700', color: '#4A7A68', whiteSpace: 'nowrap' }}>
                             Plus &amp; Premium

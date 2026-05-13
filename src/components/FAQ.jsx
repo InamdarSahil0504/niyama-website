@@ -11,18 +11,18 @@ export default function FAQ() {
         // Habits
         {
             category: 'Habits',
-            question: 'What are the 9 habits?',
-            answer: 'Your 9 habits are made up of three layers. First, 3 core habits that are fixed for all users: wake before 7:30 AM, no phone after 10:30 PM, and a daily steps goal. Second, you pick 4 library habits from a curated list of 10 science-backed options — including things like 30 minutes of active heart rate, mindfulness, hydration, reading, strength training, and more. Third, Plus subscribers can add 1 custom habit of their own, and Premium subscribers can add up to 3.',
+            question: 'What habits does Niyama Life track?',
+            answer: 'Niyama Life tracks 10 daily habits across two fixed groups. Three core habits are tracked for all users: Wake Consistency, Sleep Duration, and Steps. Seven library habits are also fixed for all users: Screen Time under 4 hours, No Phone after 10:30pm, Stand Consistency, Morning Sunlight, No Late Food after 8pm, Recovery Practice, and Meditation. Plus subscribers can add up to 2 custom habits that earn 25 points each. Premium subscribers can add up to 4. All users can track unlimited custom habits — only Plus and Premium earn points on them.',
         },
         {
             category: 'Habits',
             question: 'What counts as a successful day?',
-            answer: 'A successful day means completing at least 5 of your 9 habits, with at least 2 of those being core habits. This threshold is the same across all tiers — what differs is the minimum number of successful days required per month to be eligible for rewards (10 days for Free and Basic, 7 for Plus, 5 for Premium).',
+            answer: 'A successful day means completing at least 2 of 3 core habits AND at least 3 of 7 library habits. Both conditions must be met. Custom habits do not count toward the successful day threshold. Each tier requires a minimum number of successful days per month to qualify for rewards — 10 days for Free and Basic, 7 for Plus, 5 for Premium.',
         },
         {
             category: 'Habits',
-            question: 'Can I change my library habits?',
-            answer: 'Yes. You can swap your library habits once per month. Core habits are fixed and cannot be changed — they form the scientific foundation of the framework. Custom habits (Plus and Premium) can also be updated monthly.',
+            question: 'How does the successful day threshold work?',
+            answer: 'A successful day requires completing at least 2 of your 3 core habits AND at least 3 of your 7 library habits — both conditions must be met simultaneously. Completing 2 core and only 2 library does not count. Completing 0 core and all 7 library does not count. Custom habits are excluded from the threshold entirely but still earn points.',
         },
         {
             category: 'Habits',
@@ -49,12 +49,12 @@ export default function FAQ() {
         {
             category: 'Rewards',
             question: 'What are milestone bonuses and when do they trigger?',
-            answer: 'Milestone bonuses are additional rewards on top of your base cap that unlock progressively as your consistency grows. For Plus: you unlock a bonus at 20 successful days and another at the end of a successful month. For Premium: bonuses unlock at 10 days, 20 days, a successful month, and a perfect month. Each milestone is additive — missing one does not remove what you have already unlocked.',
+            answer: 'Milestone bonuses are additional rewards on top of your base cap that unlock progressively as your consistency grows. For Plus: base $10.00, +$2.50 at 20 successful days, +$5.00 for a successful month, +$7.50 for a perfect month — up to $17.50/mo total. For Premium: base $25.00, +$2.50 at 10 days, +$5.00 at 20 days, +$7.50 for a successful month, +$10.00 for a perfect month — up to $35.00/mo total. Each milestone is additive — missing one does not remove what you have already unlocked.',
         },
         {
             category: 'Rewards',
             question: 'What is a perfect month bonus?',
-            answer: 'A perfect month means every single day you submitted during the month was a successful day — no unsuccessful submissions. Premium subscribers earn an additional $7.50 (USA) or ₹500 (India) bonus for achieving this. It is the highest reward tier and is designed to reward exceptional consistency.',
+            answer: 'A perfect month means every submitted day during the month was a successful day. Plus subscribers earn an additional $7.50 bonus. Premium subscribers earn an additional $10.00 bonus (USA).',
         },
         {
             category: 'Rewards',

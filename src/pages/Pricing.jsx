@@ -22,7 +22,7 @@ export default function PricingPage() {
                         Every tier gives you access to all 5 science-backed habits. Upgrade to unlock higher reward potential.
                     </p>
                     <div style={{ display: 'inline-block', backgroundColor: '#e8f2ee', color: '#3d6b5c', fontSize: '14px', fontWeight: '600', padding: '8px 20px', borderRadius: '20px' }}>
-                        {region === 'india' ? '1,000 pts = ₹50 in rewards' : '1,000 pts = $1.00 in rewards'}
+                        {region === 'india' ? '1,000 pts = ₹1.00 in rewards' : '1,000 pts = $1.00 in rewards'}
                     </div>
                 </div>
             </section>
@@ -38,7 +38,7 @@ export default function PricingPage() {
                         <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '28px', border: '1px solid #d8e8e2' }}>
                             <div style={{ fontSize: '24px', marginBottom: '12px' }}>📅</div>
                             <h3 style={{ fontSize: '16px', fontWeight: '700', color: '#1a2e28', marginBottom: '8px' }}>Minimum successful days</h3>
-                            <p style={{ fontSize: '14px', color: '#4a6b62', lineHeight: '1.7' }}>Each tier requires a minimum number of successful days per month to qualify for rewards. A successful day means completing any 4 of the 5 habits.</p>
+                            <p style={{ fontSize: '14px', color: '#4a6b62', lineHeight: '1.7' }}>Each tier requires a minimum number of successful days per month to qualify for rewards. A successful day means completing at least 2 of 3 core habits AND at least 3 of 7 library habits.</p>
                         </div>
                         <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '28px', border: '1px solid #d8e8e2' }}>
                             <div style={{ fontSize: '24px', marginBottom: '12px' }}>🔄</div>

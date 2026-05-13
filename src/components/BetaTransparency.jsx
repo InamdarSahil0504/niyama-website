@@ -8,18 +8,18 @@ export default function BetaTransparency() {
         {
             status: 'current',
             label: 'Beta 2 — Web App',
-            description: 'Complete rebuild with the full 9-habit framework, milestone reward system, streak freezes, referrals, and account management. Stripe subscriptions and real rewards going live with Beta 2.',
+            description: 'Complete rebuild with the full Phase 6 framework — 10 fixed habits, updated milestone reward system, streak freezes, referrals, Contact Us support, and account management. Stripe subscriptions and real rewards now live.',
             highlight: 'Subscriptions and rewards activate at Beta 2 launch.',
         },
         {
             status: 'upcoming',
             label: 'App Store Launch',
-            description: 'Native iOS and Android apps via React Native and Expo. Apple HealthKit and Google Health Connect integration for automatic habit verification. Push notifications and in-app sleep mode.',
+            description: 'Native iOS and Android apps via React Native and Expo. Apple HealthKit and Google Health Connect integration for automatic habit verification. Advanced health analytics including Circadian Consistency Score, HRV trends, and habit-biometric correlations. Submitting to App Store pending Apple Developer account approval.',
         },
         {
             status: 'upcoming',
-            label: 'Health Integration',
-            description: 'Steps, sleep, and active heart rate pulled directly from Apple Health and Google Health Connect. Removes manual self-reporting for core health metrics.',
+            label: 'Advanced Health Analytics',
+            description: 'Steps, sleep, HRV, resting heart rate, and stand hours pulled directly from Apple Health and Google Health Connect. Circadian Consistency Score, habit-biometric correlations, and personal recovery scoring. Available in the native app.',
         },
         {
             status: 'upcoming',

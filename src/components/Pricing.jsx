@@ -110,6 +110,7 @@ export default function Pricing() {
           { label: 'Base reward cap', value: '$10.00/mo' },
           { label: '20-day milestone bonus', value: '+$2.50' },
           { label: 'Successful month bonus', value: '+$5.00' },
+          { label: 'Perfect month bonus', value: '+$7.50' },
         ],
         maxReward: '$17.50',
         minDays: '7 successful days',
@@ -117,7 +118,7 @@ export default function Pricing() {
           'Everything in Basic',
           'Milestone bonuses unlock progressively',
           '1 streak freeze per month',
-          '4 library habits + 1 custom habit',
+          '2 custom habits earn points · unlimited custom tracking',
         ],
       },
       {
@@ -136,19 +137,19 @@ export default function Pricing() {
         isSubscription: true,
         priceKey: 'premium',
         milestones: [
-          { label: 'Base reward cap', value: '$20.00/mo' },
+          { label: 'Base reward cap', value: '$25.00/mo' },
           { label: '10-day milestone bonus', value: '+$2.50' },
           { label: '20-day milestone bonus', value: '+$5.00' },
           { label: 'Successful month bonus', value: '+$7.50' },
-          { label: 'Perfect month bonus', value: '+$7.50' },
+          { label: 'Perfect month bonus', value: '+$10.00' },
         ],
-        maxReward: '$45.00',
+        maxReward: '$35.00',
         minDays: '5 successful days',
         features: [
           'Everything in Plus',
           'Highest reward potential',
           '1 streak freeze per month',
-          '4 library habits + 3 custom habits',
+          '4 custom habits earn points · unlimited custom tracking',
         ],
       },
     ],
@@ -219,11 +220,12 @@ export default function Pricing() {
         cta: 'Join Waitlist',
         isSubscription: true,
         milestones: [
-          { label: 'Base reward cap', value: '₹500/mo' },
+          { label: 'Base reward cap', value: '₹250/mo' },
           { label: '20-day milestone bonus', value: '+₹100' },
-          { label: 'Successful month bonus', value: '+₹150' },
+          { label: 'Successful month bonus', value: '+₹100' },
+          { label: 'Perfect month bonus', value: '+₹50' },
         ],
-        maxReward: '₹750',
+        maxReward: '₹500',
         minDays: '7 successful days',
         features: [
           'Everything in Basic',
@@ -247,13 +249,13 @@ export default function Pricing() {
         cta: 'Join Waitlist',
         isSubscription: true,
         milestones: [
-          { label: 'Base reward cap', value: '₹1,000/mo' },
+          { label: 'Base reward cap', value: '₹750/mo' },
           { label: '10-day milestone bonus', value: '+₹100' },
           { label: '20-day milestone bonus', value: '+₹150' },
           { label: 'Successful month bonus', value: '+₹250' },
-          { label: 'Perfect month bonus', value: '+₹500' },
+          { label: 'Perfect month bonus', value: '+₹250' },
         ],
-        maxReward: '₹2,000',
+        maxReward: '₹1,500',
         minDays: '5 successful days',
         features: [
           'Everything in Plus',
@@ -455,13 +457,13 @@ export default function Pricing() {
             What counts as a successful day?
           </h3>
           <p style={{ fontSize: '15px', color: '#4a6b62', marginBottom: '20px', lineHeight: '1.7' }}>
-            Complete at least 5 of your 9 habits — with at least 2 being core habits — and you have had a successful day. The more consistent you are, the more milestones you unlock.
+            Complete at least 2 of 3 core habits AND at least 3 of 7 library habits — both conditions must be met — and you have had a successful day. The more consistent you are, the more milestones you unlock.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
             {[
               { label: 'Core habits', desc: '3 fixed habits · 100 pts each' },
-              { label: 'Library habits', desc: '4 habits you choose · 50 pts each' },
-              { label: 'Custom habits', desc: 'Your own habits · 50 pts each (Plus & Premium)' },
+              { label: 'Library habits', desc: '7 fixed habits · 50 pts each' },
+              { label: 'Custom habits', desc: 'Your own habits · 25 pts each (Plus & Premium · 2 or 4 slots)' },
             ].map(function (item) {
               return (
                 <div key={item.label} style={{ backgroundColor: 'white', borderRadius: '12px', padding: '14px 20px', border: '1px solid #c8e8d8', flex: '1', minWidth: '200px' }}>

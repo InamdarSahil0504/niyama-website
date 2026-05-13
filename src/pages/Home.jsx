@@ -56,7 +56,7 @@ export default function Home() {
                         maxWidth: '520px',
                         margin: '0 auto 40px',
                     }}>
-                        Build 9 science-backed habits every day. Get real financial rewards for staying consistent. Premium subscribers unlock up to $45 per month. Start completely free — no credit card required.
+                        Track 10 science-backed habits every day. Get real financial rewards for staying consistent. Premium subscribers unlock up to $35 per month. Start completely free — no credit card required.
                     </p>
 
                     <div style={{

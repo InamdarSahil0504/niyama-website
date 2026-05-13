@@ -8,8 +8,8 @@ export default function PressKit() {
         { label: 'Status', value: 'Beta 2 — Active' },
         { label: 'Markets', value: 'USA (live) · India (coming soon)' },
         { label: 'Product type', value: 'Behaviour change platform · PWA' },
-        { label: 'Habits', value: '9 (3 core + 4 library + up to 2 custom)' },
-        { label: 'Max monthly reward', value: 'Up to $45/month (Premium, USA)' },
+        { label: 'Habits', value: '10 (3 core + 7 library) + unlimited custom' },
+        { label: 'Max monthly reward', value: 'Up to $35/month (Premium, USA)' },
         { label: 'Pricing', value: 'Free · $0.99 · $4.99 · $14.99 per month' },
         { label: 'Reward delivery', value: 'Gift cards via Tremendous' },
     ]
@@ -25,7 +25,7 @@ export default function PressKit() {
         },
         {
             label: 'Full paragraph',
-            text: 'Niyama Life is a subscription-based behaviour change platform that uses financial incentives to drive daily discipline. Users build a personalised 9-habit framework — 3 fixed core habits chosen for their overwhelming research evidence, plus 4 habits selected from a curated library of 10 science-backed options. Premium subscribers can add up to 3 custom habits on top. Rewards are not flat — they grow with consistency through a progressive milestone system, with Premium subscribers able to unlock up to $45 per month. Founded by Sahil Inamdar, a PhD biotech researcher with 700+ citations and years working on cancer immunotherapy and neurodegenerative diseases, Niyama Life represents a scientifically grounded approach to preventive health — where daily discipline is not just tracked, but financially rewarded.',
+            text: 'Niyama Life is a subscription-based behaviour change platform that uses financial incentives to drive daily discipline. Users build a personalised 10-habit framework — 3 fixed core habits chosen for their overwhelming research evidence, plus 7 fixed science-backed library habits tracked by all users. All users can track unlimited custom habits with Plus and Premium earning points on theirs. Rewards are not flat — they grow with consistency through a progressive milestone system, with Premium subscribers able to unlock up to $35 per month. Founded by Sahil Inamdar, a PhD biotech researcher with 700+ citations and years working on cancer immunotherapy and neurodegenerative diseases, Niyama Life represents a scientifically grounded approach to preventive health — where daily discipline is not just tracked, but financially rewarded.',
         },
     ]
 

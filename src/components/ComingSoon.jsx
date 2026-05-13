@@ -1,7 +1,7 @@
 export default function ComingSoon() {
     const milestones = [
         { status: 'done', emoji: '✅', label: 'Beta 1', description: 'Core app live. Habit tracking, points, analytics, subscription tiers.' },
-        { status: 'current', emoji: '🔄', label: 'Beta 2', description: 'Apple Health integration. Native iOS and Android apps. Real rewards going live.' },
+        { status: 'current', emoji: '🔄', label: 'Beta 2', description: 'Full Phase 6 habit framework. 10 fixed science-backed habits. Updated reward milestones. Native iOS and Android apps. Real rewards going live.' },
         { status: 'upcoming', emoji: '🔜', label: 'Full Launch', description: 'Open to everyone. Rewards fully automated.' },
     ]
 
