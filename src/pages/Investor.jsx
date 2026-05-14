@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const INVESTOR_PASSWORD = 'NiyamaLife2026'
+const INVESTOR_PASSWORD = import.meta.env.VITE_INVESTOR_PASSWORD || 'NiyamaLife2026'
 
 export default function Investor() {
     const [password, setPassword] = useState('')
@@ -58,14 +58,14 @@ function BusinessModel() {
         { tier: 'Free', price: '$0', annual: '—', maxReward: '$2.50/mo', note: 'First 3 months only', highlight: false },
         { tier: 'Basic', price: '$0.99/mo', annual: '$9.99/yr', maxReward: '$5.00/mo', note: 'Flat cap', highlight: false },
         { tier: 'Plus', price: '$4.99/mo', annual: '$49.99/yr', maxReward: '$17.50/mo', note: 'Milestone-gated', highlight: true },
-        { tier: 'Premium', price: '$14.99/mo', annual: '$149.99/yr', maxReward: '$45.00/mo', note: 'Milestone-gated', highlight: false },
+        { tier: 'Premium', price: '$14.99/mo', annual: '$149.99/yr', maxReward: '$35.00/mo', note: 'Milestone-gated', highlight: false },
     ]
 
     const indiaTiers = [
         { tier: 'Free', price: '₹0', annual: '—', maxReward: '₹30/mo', note: 'First 3 months only', highlight: false },
         { tier: 'Basic', price: '₹49/mo', annual: '₹499/yr', maxReward: '₹100/mo', note: 'Flat cap', highlight: false },
-        { tier: 'Plus', price: '₹249/mo', annual: '₹2,499/yr', maxReward: '₹750/mo', note: 'Milestone-gated', highlight: true },
-        { tier: 'Premium', price: '₹499/mo', annual: '₹4,999/yr', maxReward: '₹2,000/mo', note: 'Milestone-gated', highlight: false },
+        { tier: 'Plus', price: '₹249/mo', annual: '₹2,499/yr', maxReward: '₹500/mo', note: 'Milestone-gated', highlight: true },
+        { tier: 'Premium', price: '₹499/mo', annual: '₹4,999/yr', maxReward: '₹1,500/mo', note: 'Milestone-gated', highlight: false },
     ]
 
     const tiers = market === 'usa' ? usaTiers : indiaTiers
@@ -148,13 +148,16 @@ function InvestorContent() {
             bg: '#e8f5f0',
             border: '#c8e8d8',
             items: [
-                'Beta 2 web app — 9-habit framework, milestone rewards, Stripe subscriptions live',
+                'Beta 2 web app — Phase 6 10-habit framework, milestone rewards, Stripe subscriptions, Contact Us support chat, History tab',
                 'Marketing website — 10 pages, full brand identity, Stripe checkout',
                 'React Native mobile app — 5 tabs, onboarding, mood tracking, analytics, UI polish',
                 'Delaware C-Corp incorporation — EIN issued, 83(b) filed',
                 'Tremendous gift card rewards — production account approved and integrated',
                 'PostHog + Mixpanel analytics — wired across all platforms',
                 'First paying subscriber acquired',
+                'Referral system — reward cap bonus for confirmed referrals',
+                'Social sharing with branded achievement cards',
+                'Admin panel — 13-tab world-class internal dashboard with Tremendous integration, HealthKit analytics, fraud monitoring',
             ]
         },
         {
@@ -166,7 +169,7 @@ function InvestorContent() {
                 'Apple Developer account — D-U-N-S submitted to D&B, awaiting number',
                 'Tremendous reward payout edge function — monthly automated delivery',
                 'Stripe webhook handler — subscription tier sync to Supabase',
-                'YC Summer 2026 application — target batch',
+                'YC November 2026 application — target batch, deadline approximately August 2026',
             ]
         },
         {
@@ -293,8 +296,8 @@ function InvestorContent() {
                         <h2 style={{ fontSize: '32px', fontWeight: '700', color: '#1a2e28', marginBottom: '20px' }}>The solution</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                             {[
-                                '9 daily habits across 3 tiers — 3 fixed core habits with overwhelming research evidence, 4 personalised library choices from 10 science-backed options, and up to 3 custom habits for Premium subscribers.',
-                                'A progressive milestone reward system — rewards grow as consistency grows. Hit 10 days, 20 days, a successful month, a perfect month. Premium subscribers unlock up to $45 per month.',
+                                '10 daily habits across two fixed groups — 3 core habits with overwhelming research evidence, 7 fixed science-backed library habits tracked by all users, plus unlimited custom habits (up to 4 earning points for Premium subscribers).',
+                                'A progressive milestone reward system — rewards grow as consistency grows. Hit 10 days, 20 days, a successful month, a perfect month. Premium subscribers unlock up to $35 per month.',
                                 'A subscription model — users pay a small monthly fee and get rewarded when they succeed. The financial incentive is real, not gamified.',
                                 'Behavioural economics as the core mechanism — the same reinforcement principles used in clinical behaviour change research, applied to preventive health.',
                             ].map(function (point, i) {
@@ -391,9 +394,9 @@ function InvestorContent() {
 
                         <div style={{ backgroundColor: '#1a2e28', borderRadius: '16px', padding: '32px', marginTop: '24px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
                             <div style={{ flex: 1, minWidth: '200px' }}>
-                                <div style={{ fontSize: '12px', fontWeight: '700', color: '#C9973A', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>YC Summer 2026</div>
+                                <div style={{ fontSize: '12px', fontWeight: '700', color: '#C9973A', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>YC November 2026</div>
                                 <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.7', margin: 0 }}>
-                                    Targeting Y Combinator Summer 2026. Application deadline approximately September 2026. Deal: $500,000 for 7% equity. Use of funds: marketing, full-time founder salary, India launch, first hire.
+                                    Targeting Y Combinator November 2026. Application deadline approximately August 2026. Deal: $500,000 for 7% equity. Use of funds: marketing, full-time founder salary, India launch, first hire.
                                 </p>
                             </div>
                             <div style={{ backgroundColor: 'rgba(255,255,255,0.08)', borderRadius: '12px', padding: '20px 28px', textAlign: 'center', flexShrink: 0 }}>
