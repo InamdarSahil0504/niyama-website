@@ -12,7 +12,7 @@ export default function Privacy() {
         },
         {
             title: '3. Health app data',
-            content: 'The upcoming native app will request access to Apple HealthKit (iOS) and Google Health Connect (Android) to automatically track steps, sleep, and active heart rate. We access only the specific data points required to verify habit completion. We never sell, share, or use health data for advertising purposes. Health data is used solely to pre-fill habit completion on your behalf. You may revoke health app access at any time from your device settings, after which habits revert to self-reporting.',
+            content: 'The upcoming native app will request access to Apple HealthKit (iOS) and Google Health Connect (Android) to automatically track steps, sleep duration, stand hours, and wake time — the health data points required to verify the relevant core and library habits. We access only the specific data points required to verify habit completion. We never sell, share, or use health data for advertising purposes. Health data is used solely to pre-fill habit completion on your behalf. You may revoke health app access at any time from your device settings, after which habits revert to self-reporting. You may also opt in to contributing anonymised, aggregated habit and health data to health research via the Research Consent toggle in your account Settings. This toggle is off by default and entirely optional. If enabled, only anonymised data — never personally identifiable information — is contributed. You may change this preference at any time.',
         },
         {
             title: '4. How we use your data',
